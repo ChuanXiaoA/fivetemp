@@ -1,4 +1,4 @@
-package com.example.lenovo.fivetempdemo.DrawerLayout;
+package com.example.lenovo.fivetempdemo.DrawerLayout.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.example.lenovo.fivetempdemo.R;
 
 
-public class LoginActivity extends AppCompatActivity {
+public class Login_Activity extends AppCompatActivity {
 
     private ImageView mWeixin;
     private ImageView mQq;
@@ -38,7 +38,8 @@ public class LoginActivity extends AppCompatActivity {
         mQitalogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this, LoginRegActivity.class));
+                startActivity(new Intent(Login_Activity.this, Login_Reg_Activity.class));
+                finish();
             }
         });
     }

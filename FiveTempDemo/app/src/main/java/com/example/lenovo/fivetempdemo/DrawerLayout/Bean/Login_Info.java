@@ -4,7 +4,7 @@ package com.example.lenovo.fivetempdemo.DrawerLayout.Bean;
  * Created by lenovo on 2018/4/25.
  */
 
-public class LoginInfo {
+public class Login_Info {
 
     /**
      * msg : 登录成功

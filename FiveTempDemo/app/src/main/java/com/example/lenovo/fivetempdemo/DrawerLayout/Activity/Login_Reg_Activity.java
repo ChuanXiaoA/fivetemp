@@ -1,8 +1,9 @@
-package com.example.lenovo.fivetempdemo.DrawerLayout;
+package com.example.lenovo.fivetempdemo.DrawerLayout.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,15 +11,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.LoginInfo;
-import com.example.lenovo.fivetempdemo.DrawerLayout.presenter.LoginPresenter;
-import com.example.lenovo.fivetempdemo.DrawerLayout.view.LoginView;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.Login_Info;
+import com.example.lenovo.fivetempdemo.DrawerLayout.presenter.Login_Presenter;
+import com.example.lenovo.fivetempdemo.DrawerLayout.view.Login_View;
 import com.example.lenovo.fivetempdemo.MainActivity;
 import com.example.lenovo.fivetempdemo.R;
 import com.example.lenovo.fivetempdemo.Utils.SPUtil;
 
 
-public class LoginRegActivity extends AppCompatActivity implements View.OnClickListener, LoginView {
+public class Login_Reg_Activity extends AppCompatActivity implements Login_View {
 
     private ImageView mHuitui;
     /**
@@ -45,15 +46,15 @@ public class LoginRegActivity extends AppCompatActivity implements View.OnClickL
      * 游客登录
      */
     private TextView mYoukedenglu;
+    private Login_Presenter loginPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_reg);
         initView();
+        loginPresenter = new Login_Presenter(this);
         getData();
-
-
     }
 
     private void initView() {
@@ -62,42 +63,37 @@ public class LoginRegActivity extends AppCompatActivity implements View.OnClickL
         mName = findViewById(R.id.name);
         mPwd = findViewById(R.id.pwd);
         mLoginbtn = findViewById(R.id.loginbtn);
-        mLoginbtn.setOnClickListener(this);
         mWangjimima = findViewById(R.id.wangjimima);
         mYoukedenglu = findViewById(R.id.youkedenglu);
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            default:
-                break;
-            case R.id.loginbtn:
-                break;
-        }
-    }
 
     public void getData() {
         mZhucezhanghao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginRegActivity.this, RegActivity.class));
+                startActivity(new Intent(Login_Reg_Activity.this, Reg_Activity.class));
+
             }
         });
 
-        final LoginPresenter loginPresenter = new LoginPresenter(this);
         //点击登录按钮
         mLoginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loginPresenter.getLoginPresenter(mName.getText().toString(), mPwd.getText().toString());
+                String name = mName.getText().toString();
+                String pwd = mPwd.getText().toString();
+                loginPresenter.getLoginPresenter(name,pwd);
+                Log.d("AAA",name);
+                Log.d("AAA",pwd);
             }
         });
         //点击游客登录跳转到主页面
         mYoukedenglu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginRegActivity.this, MainActivity.class));
+                startActivity(new Intent(Login_Reg_Activity.this, MainActivity.class));
+
             }
         });
         //点击忘记密码跳转
@@ -105,6 +101,7 @@ public class LoginRegActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onClick(View view) {
 
+            startActivity(new Intent(Login_Reg_Activity.this,Forget_Pwd_Activity.class));
 
             }
         });
@@ -112,15 +109,23 @@ public class LoginRegActivity extends AppCompatActivity implements View.OnClickL
 
     //成功方法返回成功直接跳转到主页面
     @Override
-    public void OnSuccess(LoginInfo loginInfo) {
-        Toast.makeText(this, loginInfo.getMsg(), Toast.LENGTH_SHORT).show();
-        LoginInfo.DataBean data = loginInfo.getData();
-        int uid = data.getUid();
-        String token = data.getToken();
-        SPUtil spu = new SPUtil(LoginRegActivity.this, "SPU");
-        spu.putString("uid",uid+"");
-        spu.putString("token",token);
-        startActivity(new Intent(LoginRegActivity.this, MainActivity.class));
+    public void OnSuccess(Login_Info loginInfo) {
+        if(loginInfo.getCode().equals("0")){
+            Login_Info.DataBean data = loginInfo.getData();
+            int uid = data.getUid();
+            String token = data.getToken();
+            SPUtil spu = new SPUtil(Login_Reg_Activity.this, "SPU");
+            spu.putString("uid",uid+"");
+            spu.putString("token",token);
+            Toast.makeText(this, loginInfo.getMsg(), Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(Login_Reg_Activity.this, MainActivity.class));
+        }else {
+            Toast.makeText(this, loginInfo.getMsg(), Toast.LENGTH_SHORT).show();
+
+        }
+
+
+
     }
 
 

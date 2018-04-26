@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lenovo.fivetempdemo">
+
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <!-- 相机权限 -->
     <uses-permission android:name="android.permission.CAMERA" />
@@ -58,6 +59,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".DrawerLayout.LoginActivity"/>
 
         <activity android:name=".DrawerLayout.LoginRegActivity"/>
@@ -69,6 +71,25 @@
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="f78cf682c668f9a300a5604eaac54ce3"/>
+=======
+<<<<<<< HEAD
+        <activity android:name=".DrawerLayout.LoginActivity" />
+        <activity android:name=".DrawerLayout.LoginRegActivity" />
+        <activity android:name=".DrawerLayout.RegActivity"></activity>
+        <activity android:name=".DrawerLayout.ForgetPwdActivity"></activity>
+        <activity android:name=".ReMenShiPin.View.Activity.HotVideoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            ></activity>
+=======
+        <activity android:name=".DrawerLayout.Activity.Login_Activity" />
+        <activity android:name=".DrawerLayout.Activity.Login_Reg_Activity" />
+        <activity android:name=".DrawerLayout.Activity.Reg_Activity" />
+        <activity android:name=".DrawerLayout.Activity.Forget_Pwd_Activity" />
+        <activity android:name=".Creation.CreationActivity" />
+        <activity android:name=".DrawerLayout.Activity.Attention_Activity"></activity>
+>>>>>>> 84edb16d341037e3f7275eaca3f37e255e4b0038
+>>>>>>> f161773e3b5c400e06d56a10203e61fa0bc1e0bc
     </application>
 
 </manifest>

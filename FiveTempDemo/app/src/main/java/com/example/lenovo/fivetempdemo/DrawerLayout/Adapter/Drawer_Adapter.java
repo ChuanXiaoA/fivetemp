@@ -1,7 +1,6 @@
 package com.example.lenovo.fivetempdemo.DrawerLayout.Adapter;
 
 import android.content.Context;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.DrawerInfo;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.Drawer_Info;
 import com.example.lenovo.fivetempdemo.R;
 
 import java.util.List;
@@ -19,12 +18,12 @@ import java.util.List;
  * Created by lenovo on 2018/4/24.
  */
 
-public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.DrawerViewHolder> {
+public class Drawer_Adapter extends RecyclerView.Adapter<Drawer_Adapter.DrawerViewHolder> {
     Context context;
-    List<DrawerInfo> list;
+    List<Drawer_Info> list;
     private View inflate;
 
-    public DrawerAdapter(Context context, List<DrawerInfo> list) {
+    public Drawer_Adapter(Context context, List<Drawer_Info> list) {
         this.context = context;
         this.list = list;
     }
@@ -38,10 +37,19 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.DrawerView
 
     @Override
     public void onBindViewHolder(DrawerViewHolder holder, int position) {
-        DrawerInfo drawerInfo = list.get(position);
-        //Uri parse = Uri.parse(String.valueOf(drawerInfo.getImg()));
-         holder.imageView.setImageResource(drawerInfo.getImg());
+        final Drawer_Info drawerInfo = list.get(position);
+        holder.imageView.setImageResource(drawerInfo.getImg());
         holder.textView.setText(drawerInfo.getName());
+
+        inflate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(setOnItemListener!=null){
+                    setOnItemListener.OnSuccess(drawerInfo.getName());
+                }
+            }
+        });
+
     }
 
     @Override
@@ -60,4 +68,14 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.DrawerView
             textView = itemView.findViewById(R.id.drawer_text);
         }
     }
+
+    public interface setOnItemListener{
+        void OnSuccess(String name);
+    }
+    setOnItemListener setOnItemListener;
+    public void getsetOnItemListener(setOnItemListener setOnItemListener){
+
+        this.setOnItemListener=setOnItemListener;
+    }
+
 }

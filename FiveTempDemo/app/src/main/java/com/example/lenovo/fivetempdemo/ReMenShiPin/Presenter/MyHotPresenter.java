@@ -8,7 +8,9 @@ import com.example.lenovo.fivetempdemo.ReMenShiPin.View.MyViewHot;
 /**
  * Created by zh on 2018/4/25.
  */
-
+/*
+    获取热门列表Presenter层
+ */
 public class MyHotPresenter {
     MyViewHot myViewHot;
     MyHotVideoModel myHotVideoModel;

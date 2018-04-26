@@ -1,8 +1,9 @@
 package com.example.lenovo.fivetempdemo.DrawerLayout.app;
 
 
-import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.LoginInfo;
-import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.RegInfo;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.Attention_Info;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.Login_Info;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.Reg_Info;
 
 import io.reactivex.Flowable;
 import retrofit2.http.GET;
@@ -15,7 +16,9 @@ import retrofit2.http.Query;
 public interface AppService {
 
 @GET("quarter/register")
-    Flowable<RegInfo> getRegInfo(@Query("regtype") String regtype, @Query("mobile") String mobile, @Query("password") String passwprd);
+    Flowable<Reg_Info> getRegInfo(@Query("regtype") String regtype, @Query("mobile") String mobile, @Query("password") String passwprd);
 @GET("user/login")
-    Flowable<LoginInfo> getLoginInfo(@Query("mobile") String mobile, @Query("password") String passwprd);
+    Flowable<Login_Info> getLoginInfo(@Query("mobile") String mobile, @Query("password") String passwprd);
+@GET("quarter/getFollowUsers")
+    Flowable<Attention_Info> getAttentionInfo(@Query("token") String token,@Query("uid") String uid,@Query("source") String source,@Query("appVersion") String appVersion);
 }

@@ -41,11 +41,13 @@ public class MyHotAdapter extends RecyclerView.Adapter<MyHotAdapter.MyHolder> {
         Log.i("sss",data.get(position).getCover()+"++++______________");
         Glide.with(context).load(data.get(position).getUser().getIcon()).into(holder.image);
         videoUrl = data.get(position).getVideoUrl();
-         view.setOnClickListener(new View.OnClickListener() {
+        final int wid = data.get(position).getWid();
+
+        view.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
                  if (clickItemRestul!=null){
-                  clickItemRestul.setOnItemListent(videoUrl);
+                  clickItemRestul.setOnItemListent(videoUrl,wid+"");
                  }
              }
          });
@@ -66,7 +68,7 @@ public class MyHotAdapter extends RecyclerView.Adapter<MyHotAdapter.MyHolder> {
         }
     }
      public interface setClickItemRestul{
-        void setOnItemListent(String videoUrl);
+        void setOnItemListent(String videoUrl,String wid);
      }
      setClickItemRestul clickItemRestul;
     public void setOnRestulItem(setClickItemRestul clickItemRestul){
