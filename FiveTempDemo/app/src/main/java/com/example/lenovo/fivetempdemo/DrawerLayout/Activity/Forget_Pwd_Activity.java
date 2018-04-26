@@ -1,10 +1,10 @@
-package com.example.lenovo.fivetempdemo.DrawerLayout;
+package com.example.lenovo.fivetempdemo.DrawerLayout.Activity;
 
 
 import com.example.lenovo.fivetempdemo.Base.BaseActivity;
 import com.example.lenovo.fivetempdemo.R;
 
-public class ForgetPwdActivity extends BaseActivity {
+public class Forget_Pwd_Activity extends BaseActivity {
 
 
 

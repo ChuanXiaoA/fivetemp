@@ -1,4 +1,4 @@
-package com.example.lenovo.fivetempdemo.HomePage.H_I_View;
+package com.example.lenovo.fivetempdemo.HomePage.Home_I_View;
 
 
 import com.example.lenovo.fivetempdemo.HomePage.Home_Bean.H_Bean_lunbo;

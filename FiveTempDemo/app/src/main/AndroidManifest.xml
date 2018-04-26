@@ -22,6 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".DrawerLayout.LoginActivity" />
         <activity android:name=".DrawerLayout.LoginRegActivity" />
         <activity android:name=".DrawerLayout.RegActivity"></activity>
@@ -30,6 +31,14 @@
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             ></activity>
+=======
+        <activity android:name=".DrawerLayout.Activity.Login_Activity" />
+        <activity android:name=".DrawerLayout.Activity.Login_Reg_Activity" />
+        <activity android:name=".DrawerLayout.Activity.Reg_Activity" />
+        <activity android:name=".DrawerLayout.Activity.Forget_Pwd_Activity" />
+        <activity android:name=".Creation.CreationActivity" />
+        <activity android:name=".DrawerLayout.Activity.Attention_Activity"></activity>
+>>>>>>> 84edb16d341037e3f7275eaca3f37e255e4b0038
     </application>
 
 </manifest>

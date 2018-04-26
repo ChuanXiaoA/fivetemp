@@ -3,7 +3,7 @@ package com.example.lenovo.fivetempdemo.DrawerLayout.model;
 
 
 import com.example.lenovo.fivetempdemo.Api.Api;
-import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.RegInfo;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.Reg_Info;
 import com.example.lenovo.fivetempdemo.DrawerLayout.app.AppService;
 import com.example.lenovo.fivetempdemo.Utils.RetrofitUtils;
 
@@ -17,7 +17,7 @@ import io.reactivex.subscribers.DefaultSubscriber;
  * Created by lenovo on 2018/4/25.
  */
 
-public class RegModel {
+public class Reg_Model {
 
     public interface setOnReg{
         void OnSuccess(String msg);
@@ -32,12 +32,12 @@ public class RegModel {
     public void getRegModel(String type,String mobile,String password){
         RetrofitUtils inData = RetrofitUtils.getInData();
         AppService retrofit = inData.getRetrofit(Api.URL_, AppService.class);
-        Flowable<RegInfo> regInfo = retrofit.getRegInfo(type, mobile, password);
+        Flowable<Reg_Info> regInfo = retrofit.getRegInfo(type, mobile, password);
         regInfo.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribeWith(new DefaultSubscriber<RegInfo>() {
+                .subscribeWith(new DefaultSubscriber<Reg_Info>() {
                     @Override
-                    public void onNext(RegInfo regInfo) {
+                    public void onNext(Reg_Info regInfo) {
                         String code = regInfo.getCode();
                         String msg = regInfo.getMsg();
                         if(code.equals("0")){
