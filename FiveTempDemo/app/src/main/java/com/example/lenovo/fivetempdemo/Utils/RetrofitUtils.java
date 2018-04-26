@@ -2,6 +2,8 @@ package com.example.lenovo.fivetempdemo.Utils;
 
 import android.util.Log;
 
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -46,7 +48,7 @@ public class RetrofitUtils {
                 .baseUrl(path)
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
 
         T t = retrofit.create(cla);
