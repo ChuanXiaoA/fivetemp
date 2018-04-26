@@ -6,4 +6,5 @@ package com.example.lenovo.fivetempdemo.ReMenShiPin.api;
 
 public class Api {
     public static final String HOTVIDEO_URL="https://www.zhaoapi.cn/";
+    public static final String DETAILS_URL="https://www.zhaoapi.cn/";
 }

@@ -1,5 +1,6 @@
 package com.example.lenovo.fivetempdemo.Fragment.f1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -16,6 +17,7 @@ import com.example.lenovo.fivetempdemo.ReMenShiPin.Adapter.MyHotAdapter;
 import com.example.lenovo.fivetempdemo.ReMenShiPin.Bean.HotVideoBean;
 import com.example.lenovo.fivetempdemo.ReMenShiPin.ItemFenge.MyDecoration;
 import com.example.lenovo.fivetempdemo.ReMenShiPin.Presenter.MyHotPresenter;
+import com.example.lenovo.fivetempdemo.ReMenShiPin.View.Activity.HotVideoActivity;
 import com.example.lenovo.fivetempdemo.ReMenShiPin.View.MyViewHot;
 
 import java.util.List;
@@ -63,15 +65,18 @@ public class F31 extends Fragment implements MyViewHot{
         //RecyclerView每个Item点击事件  来获取视频
         myHotAdapter.setOnRestulItem(new MyHotAdapter.setClickItemRestul() {
             @Override
-            public void setOnItemListent(String videoUrl) {
-
+            public void setOnItemListent(String videoUrl,String wid) {
+                Intent intent=new Intent(getActivity(), HotVideoActivity.class);
+                intent.putExtra("videoUrl",videoUrl);
+                intent.putExtra("wid",wid);
+                startActivity(intent);
             }
         });
     }
 //热门视频请求失败方法
     @Override
     public void setError(String msg) {
-        Log.i("xxx",msg+"王八蛋");
+        Log.i("xxx",msg);
         Toast.makeText(getActivity(),msg,Toast.LENGTH_SHORT).show();
     }
 

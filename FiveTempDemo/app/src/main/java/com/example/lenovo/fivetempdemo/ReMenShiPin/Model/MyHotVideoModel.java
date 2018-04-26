@@ -13,7 +13,9 @@ import io.reactivex.subscribers.DefaultSubscriber;
 /**
  * Created by zh on 2018/4/25.
  */
-
+/*
+           获取热门列表Model层
+ */
 public class MyHotVideoModel {
 public interface setHotVideojiekou{
     void setSuccess(HotVideoBean hotVideoBean);
