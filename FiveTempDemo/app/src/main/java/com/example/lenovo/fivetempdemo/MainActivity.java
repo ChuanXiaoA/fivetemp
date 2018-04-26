@@ -1,5 +1,6 @@
 package com.example.lenovo.fivetempdemo;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.lenovo.fivetempdemo.DrawerLayout.Adapter.DrawerAdapter;
 import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.DrawerInfo;
+import com.example.lenovo.fivetempdemo.DrawerLayout.LoginActivity;
 import com.example.lenovo.fivetempdemo.Fragment.Fragment1;
 import com.example.lenovo.fivetempdemo.Fragment.Fragment2;
 import com.example.lenovo.fivetempdemo.Fragment.Fragment3;
@@ -123,8 +125,12 @@ public class MainActivity extends AppCompatActivity {
             case R.id.imageView2:
                 break;
             case R.id.touxiang:
+                //点击头像跳到登录页面
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
                 break;
             case R.id.naicha:
+                //点击昵称跳到登录页面
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
                 break;
             case R.id.rlv:
                 break;
