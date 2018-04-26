@@ -56,5 +56,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.orhanobut:logger:1.15'
 
+    compile 'fm.jiecao:jiecaovideoplayer:2.0'
+
 
 }
