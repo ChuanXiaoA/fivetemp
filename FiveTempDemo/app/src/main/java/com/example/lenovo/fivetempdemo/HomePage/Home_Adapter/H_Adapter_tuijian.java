@@ -11,8 +11,6 @@ import android.widget.TextView;
 import android.widget.VideoView;
 
 import com.bumptech.glide.Glide;
-import com.example.lenovo.fivetempdemo.DrawerLayout.Adapter.DrawerAdapter;
-import com.example.lenovo.fivetempdemo.Fragment.f1.F11;
 import com.example.lenovo.fivetempdemo.HomePage.Home_Bean.H_Bean_tuijian;
 import com.example.lenovo.fivetempdemo.R;
 
