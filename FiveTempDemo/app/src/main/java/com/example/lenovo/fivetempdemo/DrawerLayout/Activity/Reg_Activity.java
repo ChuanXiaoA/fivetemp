@@ -1,9 +1,6 @@
-package com.example.lenovo.fivetempdemo.DrawerLayout;
+package com.example.lenovo.fivetempdemo.DrawerLayout.Activity;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,13 +9,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lenovo.fivetempdemo.Base.BaseActivity;
-import com.example.lenovo.fivetempdemo.DrawerLayout.presenter.RegPresenter;
-import com.example.lenovo.fivetempdemo.DrawerLayout.view.RegView;
+import com.example.lenovo.fivetempdemo.DrawerLayout.presenter.Reg_Presenter;
+import com.example.lenovo.fivetempdemo.DrawerLayout.view.Reg_View;
 import com.example.lenovo.fivetempdemo.MainActivity;
 import com.example.lenovo.fivetempdemo.R;
 
 
-public class RegActivity extends BaseActivity<RegPresenter> implements RegView {
+public class Reg_Activity extends BaseActivity<Reg_Presenter> implements Reg_View {
 
     private ImageView mHuitui;
     /**
@@ -53,7 +50,8 @@ public class RegActivity extends BaseActivity<RegPresenter> implements RegView {
         mYoukedenglu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RegActivity.this,MainActivity.class));
+                startActivity(new Intent(Reg_Activity.this,MainActivity.class));
+                finish();
             }
         });
     }
@@ -63,8 +61,8 @@ public class RegActivity extends BaseActivity<RegPresenter> implements RegView {
     }
 
     @Override
-    public RegPresenter getPresenter() {
-        presenter=new RegPresenter(this);
+    public Reg_Presenter getPresenter() {
+        presenter=new Reg_Presenter(this);
         return presenter;
     }
 
@@ -82,7 +80,8 @@ public class RegActivity extends BaseActivity<RegPresenter> implements RegView {
     @Override
     public void OnSuccess(String msg) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(RegActivity.this,LoginRegActivity.class));
+        startActivity(new Intent(Reg_Activity.this,Login_Reg_Activity.class));
+        finish();
     }
 
     @Override

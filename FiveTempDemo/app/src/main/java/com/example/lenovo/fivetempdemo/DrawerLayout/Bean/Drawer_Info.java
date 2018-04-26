@@ -4,12 +4,12 @@ package com.example.lenovo.fivetempdemo.DrawerLayout.Bean;
  * Created by lenovo on 2018/4/24.
  */
 
-public class DrawerInfo {
+public class Drawer_Info {
 
     private int img;
     private String name;
 
-    public DrawerInfo(int img, String name) {
+    public Drawer_Info(int img, String name) {
         this.img = img;
         this.name = name;
     }

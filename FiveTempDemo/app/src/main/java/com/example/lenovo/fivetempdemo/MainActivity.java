@@ -7,15 +7,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
-import com.example.lenovo.fivetempdemo.DrawerLayout.Adapter.DrawerAdapter;
-import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.DrawerInfo;
-import com.example.lenovo.fivetempdemo.DrawerLayout.LoginActivity;
+import com.example.lenovo.fivetempdemo.Creation.CreationActivity;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Activity.Attention_Activity;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Adapter.Drawer_Adapter;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.Drawer_Info;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Activity.Login_Activity;
 import com.example.lenovo.fivetempdemo.Fragment.Fragment1;
 import com.example.lenovo.fivetempdemo.Fragment.Fragment2;
 import com.example.lenovo.fivetempdemo.Fragment.Fragment3;
@@ -66,6 +70,54 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        getData();
+
+
+    }
+    @OnClick({R.id.btnbar, R.id.imageView, R.id.textView, R.id.imageView2, R.id.touxiang, R.id.naicha, R.id.rlv, R.id.yueliang, R.id.yejianmoshi, R.id.imageView3, R.id.imageView4, R.id.left, R.id.drawer_layout})
+    public void onClick(View v) {
+        switch (v.getId()) {
+            default:
+                break;
+            case R.id.btnbar:
+                break;
+            case R.id.imageView:
+                //点击头像打开侧拉框
+                mDrawerLayout.openDrawer(Gravity.LEFT);
+                break;
+            case R.id.textView:
+                break;
+            case R.id.imageView2:
+                //点击图片跳转到创作页面
+                startActivity(new Intent(MainActivity.this, CreationActivity.class));
+                break;
+            case R.id.touxiang:
+                //点击头像跳到登录页面
+                startActivity(new Intent(MainActivity.this, Login_Activity.class));
+                break;
+            case R.id.naicha:
+                //点击昵称跳到登录页面
+                startActivity(new Intent(MainActivity.this, Login_Activity.class));
+                break;
+            case R.id.rlv:
+                break;
+            case R.id.yueliang:
+                break;
+            case R.id.yejianmoshi:
+                break;
+            case R.id.imageView3:
+                break;
+            case R.id.imageView4:
+                break;
+            case R.id.left:
+                break;
+            case R.id.drawer_layout:
+                break;
+        }
+    }
+
+    public void getData(){
+
         mDrawerLayout1 = new DrawerLayout(this);
         mBtnbar.init(getSupportFragmentManager())
                 .setFontSize(0)
@@ -89,14 +141,11 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .isShowDivider(false);
-        List<DrawerInfo> list=new ArrayList<>();
-        list.add(new DrawerInfo(R.mipmap.raw_1499933216,"我的关注"));
-        list.add(new DrawerInfo(R.mipmap.raw_1499947358,"我的收藏"));
-        list.add(new DrawerInfo(R.mipmap.raw_1499946865,"搜索好友"));
-        list.add(new DrawerInfo(R.mipmap.raw_1499947389,"消息通知"));
-        mRlv.setLayoutManager(new LinearLayoutManager(this));
-        mRlv.setAdapter(new DrawerAdapter(this,list));
-
+        List<Drawer_Info> list=new ArrayList<>();
+        list.add(new Drawer_Info(R.mipmap.raw_1499933216,"我的关注"));
+        list.add(new Drawer_Info(R.mipmap.raw_1499947358,"我的收藏"));
+        list.add(new Drawer_Info(R.mipmap.raw_1499946865,"搜索好友"));
+        list.add(new Drawer_Info(R.mipmap.raw_1499947389,"消息通知"));
         Uri uri = Uri.parse("res:///" + R.mipmap.touxiang);
         AbstractDraweeController build = Fresco.newDraweeControllerBuilder()
                 .setUri(uri)
@@ -108,44 +157,19 @@ public class MainActivity extends AppCompatActivity {
                 .setTapToRetryEnabled(true)
                 .build();
         mTouxiang.setController(build1);
-
+        mRlv.setLayoutManager(new LinearLayoutManager(this));
+        Drawer_Adapter drawerAdapter = new Drawer_Adapter(this, list);
+        mRlv.setAdapter(drawerAdapter);
+        drawerAdapter.getsetOnItemListener(new Drawer_Adapter.setOnItemListener() {
+            @Override
+            public void OnSuccess(String name) {
+                if(name.equals("我的关注")){
+                    Toast.makeText(MainActivity.this, "哒哒哒", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, Attention_Activity.class));
+                }
+            }
+        });
 
     }
-    @OnClick({R.id.btnbar, R.id.imageView, R.id.textView, R.id.imageView2, R.id.touxiang, R.id.naicha, R.id.rlv, R.id.yueliang, R.id.yejianmoshi, R.id.imageView3, R.id.imageView4, R.id.left, R.id.drawer_layout})
-    public void onClick(View v) {
-        switch (v.getId()) {
-            default:
-                break;
-            case R.id.btnbar:
-                break;
-            case R.id.imageView:
-                break;
-            case R.id.textView:
-                break;
-            case R.id.imageView2:
-                break;
-            case R.id.touxiang:
-                //点击头像跳到登录页面
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
-                break;
-            case R.id.naicha:
-                //点击昵称跳到登录页面
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
-                break;
-            case R.id.rlv:
-                break;
-            case R.id.yueliang:
-                break;
-            case R.id.yejianmoshi:
-                break;
-            case R.id.imageView3:
-                break;
-            case R.id.imageView4:
-                break;
-            case R.id.left:
-                break;
-            case R.id.drawer_layout:
-                break;
-        }
-    }
+
 }

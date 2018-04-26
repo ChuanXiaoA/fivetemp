@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lenovo.fivetempdemo">
+
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".App.MyApp"
@@ -21,13 +22,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DrawerLayout.LoginActivity"/>
-
-        <activity android:name=".DrawerLayout.LoginRegActivity"/>
-
-        <activity android:name=".DrawerLayout.RegActivity"> </activity>
-
-        <activity android:name=".DrawerLayout.ForgetPwdActivity"> </activity>
+        <activity android:name=".DrawerLayout.Activity.Login_Activity" />
+        <activity android:name=".DrawerLayout.Activity.Login_Reg_Activity" />
+        <activity android:name=".DrawerLayout.Activity.Reg_Activity" />
+        <activity android:name=".DrawerLayout.Activity.Forget_Pwd_Activity" />
+        <activity android:name=".Creation.CreationActivity" />
+        <activity android:name=".DrawerLayout.Activity.Attention_Activity"></activity>
     </application>
 
 </manifest>

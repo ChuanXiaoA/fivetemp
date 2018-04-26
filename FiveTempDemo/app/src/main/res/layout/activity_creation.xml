@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bj3"
+    android:orientation="vertical"
+    tools:context="com.example.lenovo.fivetempdemo.Creation.CreationActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#03A9F4">
+
+        <TextView
+            android:id="@+id/quxiao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="取消" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="创作" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+
+     >
+
+        <ImageView
+            android:id="@+id/luzishipin"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/fabushipin" />
+
+        <ImageView
+            android:id="@+id/fabiaoduanzi"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="170dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/fabuduanzi" />
+    </RelativeLayout>
+
+</LinearLayout>
