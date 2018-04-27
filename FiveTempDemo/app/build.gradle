@@ -51,14 +51,11 @@ dependencies {
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.orhanobut:logger:1.15'
     compile 'fm.jiecao:jiecaovideoplayer:2.0'
-<<<<<<< HEAD
 
     compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-2'
     compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-2'
 
 
-=======
     implementation files('libs/AMap_Location_V4.0.0_20180423.jar')
     implementation files('libs/Android_Map3D_SDK_V6.1.0_20180330.jar')
->>>>>>> 3d1b5cb4cf549ab782b9120aec1f82923c19a0b0
 }
