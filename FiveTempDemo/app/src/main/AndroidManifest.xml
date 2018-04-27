@@ -76,7 +76,10 @@
         <activity android:name=".Creation.CreationActivity" />
         <activity android:name=".DrawerLayout.Activity.MyAttention_Activity" />
         <activity android:name=".DrawerLayout.Activity.Collect_Activity" />
-        <activity android:name=".DrawerLayout.Activity.Seek_Random_Activity"></activity>
+        <activity android:name=".DrawerLayout.Activity.Seek_Random_Activity" />
+        <activity android:name=".DrawerLayout.Activity.News_Activity" />
+        <activity android:name=".DrawerLayout.Activity.Setting_Activity" />
+        <activity android:name=".DrawerLayout.Activity.Production_Activity"></activity>
     </application>
 
 </manifest>
