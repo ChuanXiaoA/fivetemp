@@ -60,50 +60,22 @@
             </intent-filter>
         </activity>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4258ba87c87d8c301bc64fe399e97e40ae90cd7e
         <activity android:name=".ReMenShiPin.View.Activity.HotVideoActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             >
-
         </activity>
-<<<<<<< HEAD
-       ity>
-=======
-
-
->>>>>>> 4258ba87c87d8c301bc64fe399e97e40ae90cd7e
         <service android:name="com.amap.api.location.APSService"></service>
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="f78cf682c668f9a300a5604eaac54ce3"/>
 
-<<<<<<< HEAD
-        <activity android:name=".ReMenShiPin.View.Activity.HotVideoActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden"
-            android:screenOrientation="portrait"
-            ></activity>
-
-
-=======
->>>>>>> 4258ba87c87d8c301bc64fe399e97e40ae90cd7e
         <activity android:name=".DrawerLayout.Activity.Login_Activity" />
         <activity android:name=".DrawerLayout.Activity.Login_Reg_Activity" />
         <activity android:name=".DrawerLayout.Activity.Reg_Activity" />
         <activity android:name=".DrawerLayout.Activity.Forget_Pwd_Activity" />
         <activity android:name=".Creation.CreationActivity" />
-<<<<<<< HEAD
-
         <activity android:name=".DrawerLayout.Activity.Attention_Activity"/>
-
-
-=======
-        <activity android:name=".DrawerLayout.Activity.Attention_Activity"/>
->>>>>>> 4258ba87c87d8c301bc64fe399e97e40ae90cd7e
-
     </application>
 
 </manifest>
