@@ -116,6 +116,46 @@
         android:layout_marginTop="13dp"
         android:layout_alignLeft="@+id/h_tuijian_tv_ping" />
 
+    <ImageView
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:src="@mipmap/huixin"
+        android:layout_marginTop="50dp"
+       android:layout_alignLeft="@+id/h_tuijian_img1"
+        android:id="@+id/imageView15"
+        android:layout_below="@+id/h_tuijian_img1"
+        />
+    <ImageView
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:src="@mipmap/huixing"
+        android:layout_marginTop="10dp"
+       android:layout_alignLeft="@+id/imageView15"
+        android:id="@+id/imageView16"
+        android:layout_below="@+id/imageView15"
+        />
+    <ImageView
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:src="@mipmap/pl2"
+        android:layout_marginTop="10dp"
+       android:layout_alignLeft="@+id/imageView16"
+        android:id="@+id/imageView17"
+        android:layout_below="@+id/imageView16"
+        />
+    <ImageView
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:src="@mipmap/pl1"
+        android:layout_marginTop="10dp"
+       android:layout_alignLeft="@+id/imageView17"
+        android:id="@+id/imageView18"
+        android:layout_below="@+id/imageView17"
+        />
+
+
+
+
     <TextView
         android:id="@+id/h_tuijian_tv_p1"
         android:layout_width="wrap_content"

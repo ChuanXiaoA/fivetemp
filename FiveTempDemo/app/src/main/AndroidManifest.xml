@@ -58,10 +58,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-
-
         <service android:name="com.amap.api.location.APSService" />
 
         <meta-data
@@ -78,7 +74,10 @@
 
         <activity android:name=".DrawerLayout.Activity.MyAttention_Activity" />
         <activity android:name=".DrawerLayout.Activity.Collect_Activity" />
-        <activity android:name=".DrawerLayout.Activity.Seek_Random_Activity"></activity>
+        <activity android:name=".DrawerLayout.Activity.Seek_Random_Activity" />
+        <activity android:name=".DrawerLayout.Activity.News_Activity" />
+        <activity android:name=".DrawerLayout.Activity.Setting_Activity" />
+        <activity android:name=".DrawerLayout.Activity.Production_Activity"></activity>
 
     </application>
 
