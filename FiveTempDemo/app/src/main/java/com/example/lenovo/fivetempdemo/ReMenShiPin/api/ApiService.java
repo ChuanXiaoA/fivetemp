@@ -14,7 +14,7 @@ import retrofit2.http.Query;
 public interface ApiService {
     //视频列表
     @GET("quarter/getHotVideos")
-    Flowable<HotVideoBean> getHotVideo(@Query("page") String page,
+    Flowable<HotVideoBean> getHotVideo(@Query("page") int page,
                                        @Query("token") String token,
                                        @Query("source") String source,
                                        @Query("appVersion") String appVersion);

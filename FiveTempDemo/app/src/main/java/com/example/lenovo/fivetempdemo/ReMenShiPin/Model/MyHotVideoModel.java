@@ -27,7 +27,7 @@ public void setHotVideo(setHotVideojiekou sethotVideojiekou){
     this.sethotVideojiekou=sethotVideojiekou;
 }
 
-    public void getHotVideoData(String page,String token,String source,String appvesiton){
+    public void getHotVideoData(int page,String token,String source,String appvesiton){
         RetrofitUtils inData = RetrofitUtils.getInData();
         ApiService retrofit = inData.getRetrofit(Api.URL_, ApiService.class);
         Flowable<HotVideoBean> hotVideo = retrofit.getHotVideo(page, token, source, appvesiton);

@@ -40,13 +40,11 @@
             android:layout_marginLeft="20dp"
             android:src="@mipmap/fenxiang"
             />
-        <com.facebook.drawee.view.SimpleDraweeView
+        <ImageView
             android:id="@+id/user_id"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="150dp"
-            android:layout_centerVertical="true"
-            app:roundAsCircle="true"/>
+            />
     </LinearLayout>
     <fm.jiecao.jcvideoplayer_lib.JCVideoPlayer
         android:id="@+id/videocontroller1"

@@ -19,7 +19,7 @@ public class MyHotPresenter {
         this.myViewHot = myViewHot;
         myHotVideoModel=new MyHotVideoModel();
     }
-    public void reteleHotVideo(String page,String token,String source,String appvesiton){
+    public void reteleHotVideo(int page,String token,String source,String appvesiton){
     myHotVideoModel.getHotVideoData(page,token,source,appvesiton);
     myHotVideoModel.setHotVideo(new MyHotVideoModel.setHotVideojiekou() {
         @Override
