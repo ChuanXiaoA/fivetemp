@@ -58,5 +58,8 @@ dependencies {
 
     compile 'fm.jiecao:jiecaovideoplayer:2.0'
 
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-2'
+    compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-2'
+
 
 }
