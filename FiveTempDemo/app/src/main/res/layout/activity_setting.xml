@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.lenovo.fivetempdemo.DrawerLayout.Activity.Setting_Activity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#03a9f4"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_weight="1"
+            android:onClick="activity_bt_bank"
+            android:id="@+id/activity_sgezhi_image_bank"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="13dp"
+            android:layout_marginTop="12dp"
+            android:src="@mipmap/raw_1500019926" />
+
+        <TextView
+            android:layout_weight="1"
+            android:onClick="activity_bt_bank"
+            android:layout_width="33dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="@string/activity_fanhui"
+            android:textColor="#fff"
+            android:textSize="16dp" />
+
+        <TextView
+            android:layout_weight="9"
+            android:textColor="#fff"
+            android:layout_width="33dp"
+            android:layout_height="45dp"
+            android:text="@string/activity_shezhi"
+            android:gravity="center"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#ebebeb"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="41dp"
+                android:textColor="#f000"
+                android:gravity="center"
+                android:text="@string/activity_jianchagengxin" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#f000"
+                android:layout_marginLeft="177dp"
+                android:gravity="center"
+                android:text="@string/activity_lingyiyi" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="10dp"
+                android:src="@mipmap/raw_1499943790" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="370dp"
+            android:layout_height="3dp"
+            android:layout_marginLeft="65dp"
+            android:background="#ebebeb"
+            android:orientation="horizontal"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textColor="#f000"
+                android:layout_width="120dp"
+                android:layout_height="41dp"
+                android:gravity="center"
+                android:text="@string/activity_yijianfankui" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="221dp"
+                android:layout_marginTop="10dp"
+                android:src="@mipmap/raw_1499943790" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#ebebeb"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textColor="#f000"
+                android:layout_width="120dp"
+                android:layout_height="41dp"
+                android:gravity="center"
+                android:text="@string/activity_guanyuyikezhong" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="221dp"
+                android:layout_marginTop="10dp"
+                android:src="@mipmap/raw_1499943790" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="370dp"
+            android:layout_height="3dp"
+            android:layout_marginLeft="65dp"
+            android:background="#ebebeb"
+            android:orientation="horizontal"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textColor="#f000"
+                android:layout_width="120dp"
+                android:layout_height="41dp"
+                android:gravity="center"
+                android:text="@string/activity_qingchuhuancun" />
+
+            <TextView
+                android:textColor="#f000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="177dp"
+                android:gravity="center"
+                android:text="@string/activity_yierba" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="10dp"
+                android:src="@mipmap/raw_1499943790" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="19dp"
+        android:background="#ebebeb"></LinearLayout>
+
+    <Button
+        android:id="@+id/activity_shezhi_button_finish"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#fc7265"
+        android:text="@string/activity_tuichudenglu"
+        android:textColor="#fff"
+        android:textSize="15dp" />
+</LinearLayout>

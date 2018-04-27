@@ -18,7 +18,10 @@ import android.widget.Toast;
 import com.example.lenovo.fivetempdemo.Creation.CreationActivity;
 import com.example.lenovo.fivetempdemo.DrawerLayout.Activity.MyAttention_Activity;
 import com.example.lenovo.fivetempdemo.DrawerLayout.Activity.Collect_Activity;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Activity.News_Activity;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Activity.Production_Activity;
 import com.example.lenovo.fivetempdemo.DrawerLayout.Activity.Seek_Random_Activity;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Activity.Setting_Activity;
 import com.example.lenovo.fivetempdemo.DrawerLayout.Adapter.Drawer_Adapter;
 import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.Drawer_Info;
 import com.example.lenovo.fivetempdemo.DrawerLayout.Activity.Login_Activity;
@@ -106,10 +109,13 @@ public class MainActivity extends AppCompatActivity {
             case R.id.yueliang:
                 break;
             case R.id.yejianmoshi:
+
                 break;
             case R.id.imageView3:
+                startActivity(new Intent(MainActivity.this, Production_Activity.class));
                 break;
             case R.id.imageView4:
+                startActivity(new Intent(MainActivity.this, Setting_Activity.class));
                 break;
             case R.id.left:
                 break;
@@ -174,6 +180,9 @@ public class MainActivity extends AppCompatActivity {
                 }else if(name.equals("搜索好友")){
                     Toast.makeText(MainActivity.this, "搜索好友", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(MainActivity.this, Seek_Random_Activity.class));
+                }else if(name.equals("消息通知")){
+                    Toast.makeText(MainActivity.this, "消息通知", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, News_Activity.class));
                 }
             }
         });
