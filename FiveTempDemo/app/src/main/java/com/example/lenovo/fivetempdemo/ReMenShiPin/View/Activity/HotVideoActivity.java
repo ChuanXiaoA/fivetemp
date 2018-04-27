@@ -14,6 +14,7 @@ import com.example.lenovo.fivetempdemo.R;
 import com.example.lenovo.fivetempdemo.ReMenShiPin.Bean.DetailsBean;
 import com.example.lenovo.fivetempdemo.ReMenShiPin.Presenter.MyDetailsPresen;
 import com.example.lenovo.fivetempdemo.ReMenShiPin.View.MyDetailsView;
+import com.example.lenovo.fivetempdemo.User.UserView.Activity.UserActivity;
 import com.example.lenovo.fivetempdemo.Utils.GlideCircleTransform;
 import com.facebook.drawee.controller.AbstractDraweeController;
 
@@ -31,6 +32,7 @@ public class HotVideoActivity extends AppCompatActivity implements MyDetailsView
     private String icon;
     private Uri uri;
     private AbstractDraweeController build;
+    private int uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +60,10 @@ public void StartVideio(){
     protected void onPause() {
         super.onPause();
         viewById.release();
+        viewById.releaseAllVideos();
     }
+
+
 
     /**
      * \详情页面成功的方法
@@ -71,14 +76,19 @@ public void StartVideio(){
         DetailsBean.DataBean data = detailsBean.getData();
         String videoUrl = data.getVideoUrl();
        // String nickname = data.getUser().getNickname();
+        uid = data.getUid();
         icon = data.getUser().getIcon();
         String workDesc = data.getWorkDesc();
         viewById.setUp(videoUrl,workDesc);
         ImageView imageView=new ImageView(this);
-        Glide.with(this).load(data.getCover())
-                .into(viewById.ivThumb);
-        Log.i("ggg",icon+"Sddddddddddddddddd");
-
+        Glide.with(this).load(data.getCover()).into(viewById.ivThumb);
+       // Log.i("ggg",icon+"Sddddddddddddddddd");
+        Glide.with(this)
+                .load(icon)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .transform(new GlideCircleTransform(this))
+                .crossFade()
+                .into(user_id);
     }
 
     /**
@@ -104,12 +114,7 @@ public void StartVideio(){
         back_imag.setOnClickListener(this);
         color_bian.setOnClickListener(this);
         color_no.setOnClickListener(this);
-        Glide.with(this)
-                .load(icon)
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .transform(new GlideCircleTransform(this))
-                .crossFade()
-                .into(user_id);
+
 
 
     }
@@ -137,6 +142,11 @@ public void StartVideio(){
                     flg=true;
                     color_no.setImageResource(R.drawable.no);
                 }
+                break;
+            case R.id.user_id:
+              Intent intent=new Intent(this, UserActivity.class);
+               intent.putExtra("uid",uid+"");
+               startActivity(intent);
                 break;
         }
     }
