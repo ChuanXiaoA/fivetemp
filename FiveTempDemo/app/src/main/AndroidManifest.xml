@@ -60,46 +60,34 @@
             </intent-filter>
         </activity>
 
-<<<<<<< HEAD
+
         <activity android:name=".ReMenShiPin.View.Activity.HotVideoActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             >
 
         </activity>
-=======
-        <activity android:name=".DrawerLayout.LoginActivity"/>
-
-        <activity android:name=".DrawerLayout.LoginRegActivity"/>
-
-        <activity android:name=".DrawerLayout.RegActivity"> </activity>
-
-        <activity android:name=".DrawerLayout.ForgetPwdActivity"> </activity>
+       ity>
         <service android:name="com.amap.api.location.APSService"></service>
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="f78cf682c668f9a300a5604eaac54ce3"/>
 
-        <activity android:name=".DrawerLayout.LoginActivity" />
-        <activity android:name=".DrawerLayout.LoginRegActivity" />
-        <activity android:name=".DrawerLayout.RegActivity"></activity>
-        <activity android:name=".DrawerLayout.ForgetPwdActivity"></activity>
         <activity android:name=".ReMenShiPin.View.Activity.HotVideoActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
             ></activity>
 
->>>>>>> 1322af51606814650a87dfa4b7b28e67e9c92377
+
         <activity android:name=".DrawerLayout.Activity.Login_Activity" />
         <activity android:name=".DrawerLayout.Activity.Login_Reg_Activity" />
         <activity android:name=".DrawerLayout.Activity.Reg_Activity" />
         <activity android:name=".DrawerLayout.Activity.Forget_Pwd_Activity" />
         <activity android:name=".Creation.CreationActivity" />
-<<<<<<< HEAD
+
         <activity android:name=".DrawerLayout.Activity.Attention_Activity"/>
-=======
-        <activity android:name=".DrawerLayout.Activity.Attention_Activity"></activity>
->>>>>>> 1322af51606814650a87dfa4b7b28e67e9c92377
+
+
 
     </application>
 
