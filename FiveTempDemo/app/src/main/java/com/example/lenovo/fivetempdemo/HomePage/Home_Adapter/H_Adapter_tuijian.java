@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import com.bumptech.glide.Glide;
 import com.example.lenovo.fivetempdemo.HomePage.Home_Bean.H_Bean_tuijian;
@@ -58,6 +59,10 @@ public class H_Adapter_tuijian extends RecyclerView.Adapter {
                 .load(data.get(position).getUser().getIcon())
                 .into(myViewHolder.img);
 
+        //myViewHolder.vv.setu("视频/MP3地址","视频/MP3标题");
+        //videoController.ivThumb.setThumbInCustomProject("视频/MP3缩略图地址");
+
+
     }
 
     @Override
@@ -74,6 +79,7 @@ public class H_Adapter_tuijian extends RecyclerView.Adapter {
         private final TextView ping;
         private final TextView p1;
         private final TextView p2;
+        private final VideoView vv;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -81,6 +87,7 @@ public class H_Adapter_tuijian extends RecyclerView.Adapter {
             img = itemView.findViewById(R.id.h_tuijian_img);
             name = itemView.findViewById(R.id.h_tuijian_tv_name);
             sj = itemView.findViewById(R.id.h_tuijian_tv_sj);
+            vv = itemView.findViewById(R.id.h_tuijian_vv);
             ping = itemView.findViewById(R.id.h_tuijian_tv_ping);
             p1 = itemView.findViewById(R.id.h_tuijian_tv_p1);
             p2 = itemView.findViewById(R.id.h_tuijian_tv_p2);
