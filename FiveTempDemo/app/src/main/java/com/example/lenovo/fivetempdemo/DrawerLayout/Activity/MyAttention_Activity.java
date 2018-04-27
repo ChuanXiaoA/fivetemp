@@ -1,22 +1,21 @@
 package com.example.lenovo.fivetempdemo.DrawerLayout.Activity;
 
 
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
 import com.example.lenovo.fivetempdemo.Base.BaseActivity;
-import com.example.lenovo.fivetempdemo.DrawerLayout.Adapter.Attention_Adapter;
-import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.Attention_Info;
-import com.example.lenovo.fivetempdemo.DrawerLayout.presenter.Attention_Presenter;
-import com.example.lenovo.fivetempdemo.DrawerLayout.view.Attention_View;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Adapter.MyAttention_Adapter;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.MyAttention_Info;
+import com.example.lenovo.fivetempdemo.DrawerLayout.presenter.MyAttention_Presenter;
+import com.example.lenovo.fivetempdemo.DrawerLayout.view.MyAttention_View;
 import com.example.lenovo.fivetempdemo.R;
 import com.example.lenovo.fivetempdemo.Utils.SPUtil;
 
 import java.util.List;
 
-public class Attention_Activity extends BaseActivity<Attention_Presenter> implements Attention_View {
+public class MyAttention_Activity extends BaseActivity<MyAttention_Presenter> implements MyAttention_View {
 
 
     /**
@@ -39,8 +38,8 @@ public class Attention_Activity extends BaseActivity<Attention_Presenter> implem
     }
 
     @Override
-    public Attention_Presenter getPresenter() {
-        presenter = new Attention_Presenter(this);
+    public MyAttention_Presenter getPresenter() {
+        presenter = new MyAttention_Presenter(this);
         return presenter;
     }
 
@@ -65,9 +64,9 @@ public class Attention_Activity extends BaseActivity<Attention_Presenter> implem
     }
 
     @Override
-    public void OnSuccess(Attention_Info attention_info) {
-        List<Attention_Info.DataBean> data = attention_info.getData();
-        mWodeguanzhurlv.setAdapter(new Attention_Adapter(this,data));
+    public void OnSuccess(MyAttention_Info attention_info) {
+        List<MyAttention_Info.DataBean> data = attention_info.getData();
+        mWodeguanzhurlv.setAdapter(new MyAttention_Adapter(this,data));
     }
 
 }

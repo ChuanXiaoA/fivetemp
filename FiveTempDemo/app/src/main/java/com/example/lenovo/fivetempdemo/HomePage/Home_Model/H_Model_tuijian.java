@@ -2,7 +2,8 @@ package com.example.lenovo.fivetempdemo.HomePage.Home_Model;
 
 import android.util.Log;
 
-import com.example.lenovo.fivetempdemo.HomePage.H_Api;
+import com.example.lenovo.fivetempdemo.Api.Api;
+
 import com.example.lenovo.fivetempdemo.HomePage.Home_Bean.H_Bean_tuijian;
 import com.example.lenovo.fivetempdemo.HomePage.Home_Service.H_Service;
 import com.example.lenovo.fivetempdemo.Utils.RetrofitUtils;
@@ -26,7 +27,7 @@ public class H_Model_tuijian {
     public void gettuijian() {
 
         RetrofitUtils inData = RetrofitUtils.getInData();
-        H_Service retrofit = inData.getRetrofit(H_Api.URL_, H_Service.class);
+        H_Service retrofit = inData.getRetrofit(Api.URL_, H_Service.class);
         Flowable<H_Bean_tuijian> gettuijian = retrofit.gettuijian("1","android","101");
         gettuijian.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

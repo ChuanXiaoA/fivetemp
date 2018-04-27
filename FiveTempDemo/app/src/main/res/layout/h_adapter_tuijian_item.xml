@@ -4,11 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="10dp"
-
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     >
 
 
-    <ImageView
+    <com.facebook.drawee.view.SimpleDraweeView
+        fresco:roundAsCircle="true"
         android:id="@+id/h_tuijian_img"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -51,7 +52,51 @@
         android:text="耐心等待..."
         android:layout_alignLeft="@+id/h_tuijian_img" />
 
-    <VideoView
+
+
+
+
+
+
+    <ImageView
+        android:id="@+id/h_tuijian_img4"
+        android:src="@mipmap/pinbi"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp" />
+
+    <ImageView
+        android:id="@+id/h_tuijian_img3"
+        android:src="@mipmap/copylink1"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp" />
+
+    <ImageView
+        android:id="@+id/h_tuijian_img2"
+        android:src="@mipmap/tanhao"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp" />
+
+    <ImageView
+        android:id="@+id/h_tuijian_img1"
+        android:src="@mipmap/jia2"
+        android:visibility="visible"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="38dp"
+        android:layout_height="38dp" />
+
+
+    <fm.jiecao.jcvideoplayer_lib.JCVideoPlayer
         android:id="@+id/h_tuijian_vv"
         android:layout_width="350dp"
         android:layout_height="180dp"

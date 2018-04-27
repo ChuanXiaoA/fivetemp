@@ -1,7 +1,8 @@
 package com.example.lenovo.fivetempdemo.ReMenShiPin.Model;
 
+import com.example.lenovo.fivetempdemo.Api.Api;
 import com.example.lenovo.fivetempdemo.ReMenShiPin.Bean.HotVideoBean;
-import com.example.lenovo.fivetempdemo.ReMenShiPin.api.Api;
+
 import com.example.lenovo.fivetempdemo.ReMenShiPin.api.ApiService;
 import com.example.lenovo.fivetempdemo.Utils.RetrofitUtils;
 
@@ -28,7 +29,7 @@ public void setHotVideo(setHotVideojiekou sethotVideojiekou){
 
     public void getHotVideoData(String page,String token,String source,String appvesiton){
         RetrofitUtils inData = RetrofitUtils.getInData();
-        ApiService retrofit = inData.getRetrofit(Api.HOTVIDEO_URL, ApiService.class);
+        ApiService retrofit = inData.getRetrofit(Api.URL_, ApiService.class);
         Flowable<HotVideoBean> hotVideo = retrofit.getHotVideo(page, token, source, appvesiton);
           hotVideo.subscribeOn(Schedulers.io())
                   .observeOn(AndroidSchedulers.mainThread())

@@ -1,8 +1,9 @@
 package com.example.lenovo.fivetempdemo.ReMenShiPin.Model;
 
 
+import com.example.lenovo.fivetempdemo.Api.Api;
 import com.example.lenovo.fivetempdemo.ReMenShiPin.Bean.DetailsBean;
-import com.example.lenovo.fivetempdemo.ReMenShiPin.api.Api;
+
 import com.example.lenovo.fivetempdemo.ReMenShiPin.api.ApiService;
 import com.example.lenovo.fivetempdemo.Utils.RetrofitUtils;
 
@@ -26,7 +27,7 @@ public class MydetailsModel {
          this.detailsRestult=detailsRestult;
     }
       public void getDetails(String wid){
-          RetrofitUtils.getInData().getRetrofit(Api.DETAILS_URL, ApiService.class)
+          RetrofitUtils.getInData().getRetrofit(Api.URL_, ApiService.class)
                   .getDetailsBean(wid).subscribeOn(Schedulers.io())
                   .observeOn(AndroidSchedulers.mainThread())
                   .subscribeWith(new DefaultSubscriber<DetailsBean>() {

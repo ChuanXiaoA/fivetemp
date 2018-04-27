@@ -1,8 +1,11 @@
 package com.example.lenovo.fivetempdemo.DrawerLayout.app;
 
 
-import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.Attention_Info;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.DianAttention_Info;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.MyAttention_Info;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.Collect_Info;
 import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.Login_Info;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.Seek_Random_Info;
 import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.Reg_Info;
 
 import io.reactivex.Flowable;
@@ -20,5 +23,12 @@ public interface AppService {
 @GET("user/login")
     Flowable<Login_Info> getLoginInfo(@Query("mobile") String mobile, @Query("password") String passwprd);
 @GET("quarter/getFollowUsers")
-    Flowable<Attention_Info> getAttentionInfo(@Query("token") String token,@Query("uid") String uid,@Query("source") String source,@Query("appVersion") String appVersion);
+    Flowable<MyAttention_Info> getAttentionInfo(@Query("token") String token, @Query("uid") String uid, @Query("source") String source, @Query("appVersion") String appVersion);
+@GET("quarter/getFavorites")
+    Flowable<Collect_Info> getCollectInfo(@Query("token") String token,@Query("uid") String uid,@Query("source") String source,@Query("appVersion") String appVersion);
+@GET("quarter/randomFriends")
+    Flowable<Seek_Random_Info> getRandomInfo(@Query("source") String source, @Query("appVersion") String appVersion);
+@GET("quarter/follow")
+    Flowable<DianAttention_Info> getDianAttentiionInfo(@Query("token") String token,@Query("uid") String uid,@Query("source") String source,@Query("appVersion") String appVersion,@Query("followId") String followId);
+
 }
