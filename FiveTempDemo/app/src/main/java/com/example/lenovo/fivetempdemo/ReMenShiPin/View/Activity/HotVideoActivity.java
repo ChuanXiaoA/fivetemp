@@ -9,13 +9,14 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.lenovo.fivetempdemo.R;
 import com.example.lenovo.fivetempdemo.ReMenShiPin.Bean.DetailsBean;
 import com.example.lenovo.fivetempdemo.ReMenShiPin.Presenter.MyDetailsPresen;
 import com.example.lenovo.fivetempdemo.ReMenShiPin.View.MyDetailsView;
-import com.facebook.drawee.backends.pipeline.Fresco;
+import com.example.lenovo.fivetempdemo.User.UserView.Activity.UserActivity;
+import com.example.lenovo.fivetempdemo.Utils.GlideCircleTransform;
 import com.facebook.drawee.controller.AbstractDraweeController;
-import com.facebook.drawee.view.SimpleDraweeView;
 
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 
@@ -27,10 +28,11 @@ public class HotVideoActivity extends AppCompatActivity implements MyDetailsView
     // private String videoUrl;
       boolean flg=true;
     private ImageView color_no;
-    private SimpleDraweeView user_id;
+    private ImageView user_id;
     private String icon;
     private Uri uri;
     private AbstractDraweeController build;
+    private int uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +60,10 @@ public void StartVideio(){
     protected void onPause() {
         super.onPause();
         viewById.release();
+        viewById.releaseAllVideos();
     }
+
+
 
     /**
      * \详情页面成功的方法
@@ -71,14 +76,19 @@ public void StartVideio(){
         DetailsBean.DataBean data = detailsBean.getData();
         String videoUrl = data.getVideoUrl();
        // String nickname = data.getUser().getNickname();
+        uid = data.getUid();
         icon = data.getUser().getIcon();
         String workDesc = data.getWorkDesc();
         viewById.setUp(videoUrl,workDesc);
         ImageView imageView=new ImageView(this);
-        Glide.with(this).load(data.getCover())
-                .into(viewById.ivThumb);
-        Log.i("ggg",icon+"Sddddddddddddddddd");
-        uri = Uri.parse(icon);
+        Glide.with(this).load(data.getCover()).into(viewById.ivThumb);
+       // Log.i("ggg",icon+"Sddddddddddddddddd");
+        Glide.with(this)
+                .load(icon)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .transform(new GlideCircleTransform(this))
+                .crossFade()
+                .into(user_id);
     }
 
     /**
@@ -104,11 +114,8 @@ public void StartVideio(){
         back_imag.setOnClickListener(this);
         color_bian.setOnClickListener(this);
         color_no.setOnClickListener(this);
-        build = Fresco.newDraweeControllerBuilder()
-                .setUri(uri)
-                .setTapToRetryEnabled(true)
-                .build();
-        user_id.setController(build);
+
+
 
     }
 
@@ -135,6 +142,11 @@ public void StartVideio(){
                     flg=true;
                     color_no.setImageResource(R.drawable.no);
                 }
+                break;
+            case R.id.user_id:
+              Intent intent=new Intent(this, UserActivity.class);
+               intent.putExtra("uid",uid+"");
+               startActivity(intent);
                 break;
         }
     }

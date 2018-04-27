@@ -58,42 +58,53 @@
 
 
 
-    <ImageView
-        android:id="@+id/h_tuijian_img4"
-        android:src="@mipmap/pinbi"
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/h_tuijian_pingbi"
+        fresco:placeholderImage="@mipmap/pingbi"
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
         android:layout_width="32dp"
         android:layout_height="32dp" />
 
-    <ImageView
-        android:id="@+id/h_tuijian_img3"
-        android:src="@mipmap/copylink1"
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/h_tuijian_fuzhi"
+        fresco:placeholderImage="@mipmap/fuzhi"
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
         android:layout_width="32dp"
         android:layout_height="32dp" />
 
-    <ImageView
-        android:id="@+id/h_tuijian_img2"
-        android:src="@mipmap/tanhao"
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/h_tuijian_jubao"
+        fresco:placeholderImage="@mipmap/jubao"
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
         android:layout_width="32dp"
         android:layout_height="32dp" />
 
-    <ImageView
-        android:id="@+id/h_tuijian_img1"
-        android:src="@mipmap/jia2"
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/h_tuijian_jian"
+        fresco:placeholderImage="@mipmap/jian"
         android:visibility="visible"
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
-        android:layout_width="38dp"
-        android:layout_height="38dp" />
+        android:layout_width="32dp"
+        android:layout_height="32dp" />
+
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/h_tuijian_jia"
+        fresco:placeholderImage="@mipmap/jia"
+        android:visibility="visible"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp" />
 
 
     <fm.jiecao.jcvideoplayer_lib.JCVideoPlayer
@@ -164,12 +175,12 @@
         android:layout_marginTop="11dp"
         android:text="骑车上高速：不错"
         android:layout_alignRight="@+id/h_tuijian_tv_p1" />
-
-
-
-
-
-
-
+    <ImageView
+        android:id="@+id/h_tuijian_sp"
+        android:src="@mipmap/shenping"
+        android:layout_below="@+id/h_tuijian_vv"
+        android:layout_alignRight="@id/h_tuijian_vv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>

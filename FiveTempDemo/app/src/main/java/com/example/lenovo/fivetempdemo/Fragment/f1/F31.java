@@ -35,7 +35,7 @@ public class F31 extends Fragment implements MyViewHot{
     private MyHotPresenter myHotPresenter;
     private RecyclerView hotvideo_recy1;
     private RefreshLayout refreshLayout;
-    String page="1";
+    int page=1;
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.f31,container,false);
@@ -47,15 +47,15 @@ public class F31 extends Fragment implements MyViewHot{
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(RefreshLayout refreshlayout) {
-                page = "5";
+                page = 1;
                     myHotPresenter.reteleHotVideo(page,"android","android","101");
-                refreshlayout.finishRefresh(2000/*,false*/);//传入false表示刷新失败
+                refreshlayout.finishRefresh(2000,false);//传入false表示刷新失败
             }
         });
         refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
             public void onLoadMore(RefreshLayout refreshlayout) {
-              page = "4";
+             page++;
                 myHotPresenter.reteleHotVideo(page,"android","android","101");
 
                 refreshlayout.finishLoadMore(2000/*,false*/);//传入false表示加载失败

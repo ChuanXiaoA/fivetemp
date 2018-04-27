@@ -3,11 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
-
-<ImageView
+    <ImageView
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:id="@+id/hot_video_image"
+        android:id="@+id/dearby_image"
         />
 
 </android.support.constraint.ConstraintLayout>
