@@ -100,6 +100,9 @@
 =======
         <activity android:name=".DrawerLayout.Activity.Seek_Random_Activity"></activity>
 >>>>>>> 3d1b5cb4cf549ab782b9120aec1f82923c19a0b0
+<<<<<<< HEAD
+>>>>>>> 94df356c62d9ef11d7dce27d90864725984b7930
+=======
 >>>>>>> 94df356c62d9ef11d7dce27d90864725984b7930
     </application>
 
