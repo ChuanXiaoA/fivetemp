@@ -19,6 +19,9 @@ import com.example.lenovo.fivetempdemo.ReMenShiPin.ItemFenge.MyDecoration;
 import com.example.lenovo.fivetempdemo.ReMenShiPin.Presenter.MyHotPresenter;
 import com.example.lenovo.fivetempdemo.ReMenShiPin.View.Activity.HotVideoActivity;
 import com.example.lenovo.fivetempdemo.ReMenShiPin.View.MyViewHot;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.List;
 
@@ -31,12 +34,35 @@ import java.util.List;
 public class F31 extends Fragment implements MyViewHot{
     private MyHotPresenter myHotPresenter;
     private RecyclerView hotvideo_recy1;
+    private RefreshLayout refreshLayout;
+    String page="1";
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.f31,container,false);
 
         hotvideo_recy1 = view.findViewById(R.id.hotvideo_recy);
-       HotVideo();//热门请求方法
+
+        //上拉刷新  下拉加载ID
+        refreshLayout = view.findViewById(R.id.refreshLayout);
+        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(RefreshLayout refreshlayout) {
+                page = "5";
+                    myHotPresenter.reteleHotVideo(page,"android","android","101");
+                refreshlayout.finishRefresh(2000/*,false*/);//传入false表示刷新失败
+            }
+        });
+        refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(RefreshLayout refreshlayout) {
+              page = "4";
+                myHotPresenter.reteleHotVideo(page,"android","android","101");
+
+                refreshlayout.finishLoadMore(2000/*,false*/);//传入false表示加载失败
+
+            }
+        });
+        HotVideo();//热门请求方法
         
 
         return view;
@@ -47,7 +73,7 @@ public class F31 extends Fragment implements MyViewHot{
         //热门展示列表布局  瀑布流
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
         hotvideo_recy1.setLayoutManager(staggeredGridLayoutManager);
-        myHotPresenter.reteleHotVideo("1","android","android","101");
+        myHotPresenter.reteleHotVideo(page,"android","android","101");
         //给每个Item添加分割线
         hotvideo_recy1.addItemDecoration(new MyDecoration(getActivity(),MyDecoration.VERTICAL_LIST));
 

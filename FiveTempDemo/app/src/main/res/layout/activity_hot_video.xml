@@ -2,10 +2,52 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.lenovo.fivetempdemo.ReMenShiPin.View.Activity.HotVideoActivity">
+    android:orientation="vertical"
 
+    tools:context="com.example.lenovo.fivetempdemo.ReMenShiPin.View.Activity.HotVideoActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+<ImageView
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:src="@mipmap/back"
+    android:id="@+id/back_imag"
+    />
+        <ImageView
+            android:layout_marginLeft="20dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/color_id"
+            android:src="@drawable/xin"
+            />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/color_no"
+            android:background="@drawable/no"
+            />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/fenxiang_id"
+            android:layout_marginLeft="20dp"
+            android:src="@mipmap/fenxiang"
+            />
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/user_id"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="150dp"
+            android:layout_centerVertical="true"
+            app:roundAsCircle="true"/>
+    </LinearLayout>
     <fm.jiecao.jcvideoplayer_lib.JCVideoPlayer
         android:id="@+id/videocontroller1"
         android:layout_width="match_parent"

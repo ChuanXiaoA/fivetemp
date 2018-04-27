@@ -58,6 +58,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
+
+        <activity android:name=".DrawerLayout.LoginActivity" />
+        <activity android:name=".DrawerLayout.LoginRegActivity" />
+        <activity android:name=".DrawerLayout.RegActivity"></activity>
+        <activity android:name=".DrawerLayout.ForgetPwdActivity"></activity>
+        <activity android:name=".ReMenShiPin.View.Activity.HotVideoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            ></activity>
+=======
         <activity
             android:name=".ReMenShiPin.View.Activity.HotVideoActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
@@ -68,18 +79,28 @@
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="f78cf682c668f9a300a5604eaac54ce3" />
+>>>>>>> 3d1b5cb4cf549ab782b9120aec1f82923c19a0b0
 
         <activity android:name=".DrawerLayout.Activity.Login_Activity" />
         <activity android:name=".DrawerLayout.Activity.Login_Reg_Activity" />
         <activity android:name=".DrawerLayout.Activity.Reg_Activity" />
         <activity android:name=".DrawerLayout.Activity.Forget_Pwd_Activity" />
         <activity android:name=".Creation.CreationActivity" />
+<<<<<<< HEAD
+        <activity android:name=".DrawerLayout.Activity.Attention_Activity"></activity>
+
+=======
         <activity android:name=".DrawerLayout.Activity.MyAttention_Activity" />
         <activity android:name=".DrawerLayout.Activity.Collect_Activity" />
+<<<<<<< HEAD
         <activity android:name=".DrawerLayout.Activity.Seek_Random_Activity" />
         <activity android:name=".DrawerLayout.Activity.News_Activity" />
         <activity android:name=".DrawerLayout.Activity.Setting_Activity" />
         <activity android:name=".DrawerLayout.Activity.Production_Activity"></activity>
+=======
+        <activity android:name=".DrawerLayout.Activity.Seek_Random_Activity"></activity>
+>>>>>>> 3d1b5cb4cf549ab782b9120aec1f82923c19a0b0
+>>>>>>> 94df356c62d9ef11d7dce27d90864725984b7930
     </application>
 
 </manifest>

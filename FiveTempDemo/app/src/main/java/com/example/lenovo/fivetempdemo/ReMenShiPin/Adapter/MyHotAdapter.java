@@ -39,7 +39,7 @@ public class MyHotAdapter extends RecyclerView.Adapter<MyHotAdapter.MyHolder> {
     @Override
     public void onBindViewHolder(MyHolder holder, int position) {
         Log.i("sss",data.get(position).getCover()+"++++______________");
-        Glide.with(context).load(data.get(position).getUser().getIcon()).into(holder.image);
+        Glide.with(context).load(data.get(position).getCover()).into(holder.image);
         videoUrl = data.get(position).getVideoUrl();
         final int wid = data.get(position).getWid();
 
