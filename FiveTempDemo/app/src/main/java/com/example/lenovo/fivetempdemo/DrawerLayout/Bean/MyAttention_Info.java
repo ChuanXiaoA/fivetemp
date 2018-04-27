@@ -6,7 +6,7 @@ import java.util.List;
  * Created by lenovo on 2018/4/26.
  */
 
-public class Attention_Info {
+public class MyAttention_Info {
 
 
     /**

@@ -16,7 +16,9 @@ import android.widget.Toast;
 
 
 import com.example.lenovo.fivetempdemo.Creation.CreationActivity;
-import com.example.lenovo.fivetempdemo.DrawerLayout.Activity.Attention_Activity;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Activity.MyAttention_Activity;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Activity.Collect_Activity;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Activity.Seek_Random_Activity;
 import com.example.lenovo.fivetempdemo.DrawerLayout.Adapter.Drawer_Adapter;
 import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.Drawer_Info;
 import com.example.lenovo.fivetempdemo.DrawerLayout.Activity.Login_Activity;
@@ -164,8 +166,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void OnSuccess(String name) {
                 if(name.equals("我的关注")){
-                    Toast.makeText(MainActivity.this, "哒哒哒", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(MainActivity.this, Attention_Activity.class));
+                    Toast.makeText(MainActivity.this, "我的关注", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, MyAttention_Activity.class));
+                }else if(name.equals("我的收藏")){
+                    Toast.makeText(MainActivity.this, "我的收藏", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, Collect_Activity.class));
+                }else if(name.equals("搜索好友")){
+                    Toast.makeText(MainActivity.this, "搜索好友", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, Seek_Random_Activity.class));
                 }
             }
         });

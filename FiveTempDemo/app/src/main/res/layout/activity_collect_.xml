@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.lenovo.fivetempdemo.DrawerLayout.Activity.MyAttention_Activity">
-
+    tools:context="com.example.lenovo.fivetempdemo.DrawerLayout.Activity.Collect_Activity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -24,30 +23,32 @@
             android:textSize="20dp" />
 
         <TextView
-            android:id="@+id/myguanzhu"
+            android:id="@+id/myshoucang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="我的关注"
+            android:text="我的收藏"
             android:textSize="20dp" />
 
         <TextView
-            android:id="@+id/remenguanzhu"
+            android:id="@+id/shanchu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:text="热门关注"
+            android:text="删除"
             android:textSize="20dp" />
 
 
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/wodeguanzhurlv"
+        android:id="@+id/shoucangrlv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="9" />
+
+
 
 </LinearLayout>

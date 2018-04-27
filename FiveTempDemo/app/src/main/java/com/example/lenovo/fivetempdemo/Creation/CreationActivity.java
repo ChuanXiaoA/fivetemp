@@ -1,12 +1,8 @@
 package com.example.lenovo.fivetempdemo.Creation;
-
-import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.lenovo.fivetempdemo.Base.BaseActivity;
 import com.example.lenovo.fivetempdemo.R;
-
 public class CreationActivity extends BaseActivity {
 
     /**

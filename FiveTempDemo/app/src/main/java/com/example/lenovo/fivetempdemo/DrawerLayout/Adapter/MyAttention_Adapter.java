@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.Attention_Info;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.MyAttention_Info;
 import com.example.lenovo.fivetempdemo.R;
 
 import java.util.List;
@@ -18,12 +18,12 @@ import java.util.List;
  * Created by lenovo on 2018/4/26.
  */
 
-public class Attention_Adapter extends RecyclerView.Adapter<Attention_Adapter.AttentionViewHolder>{
+public class MyAttention_Adapter extends RecyclerView.Adapter<MyAttention_Adapter.AttentionViewHolder>{
         Context context;
-    List<Attention_Info.DataBean> data;
+    List<MyAttention_Info.DataBean> data;
     private View inflate;
 
-    public Attention_Adapter(Context context, List<Attention_Info.DataBean> data) {
+    public MyAttention_Adapter(Context context, List<MyAttention_Info.DataBean> data) {
         this.context = context;
         this.data = data;
     }
@@ -37,7 +37,7 @@ public class Attention_Adapter extends RecyclerView.Adapter<Attention_Adapter.At
 
     @Override
     public void onBindViewHolder(AttentionViewHolder holder, int position) {
-        Attention_Info.DataBean dataBean = data.get(position);
+        MyAttention_Info.DataBean dataBean = data.get(position);
         String nickname = dataBean.getNickname();
         String icon = dataBean.getIcon();
         String createtime = dataBean.getCreatetime();
