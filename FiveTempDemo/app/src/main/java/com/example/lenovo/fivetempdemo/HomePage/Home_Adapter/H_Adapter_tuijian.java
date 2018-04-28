@@ -33,21 +33,9 @@ import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 
 
 public class H_Adapter_tuijian extends RecyclerView.Adapter {
-    //属性动画
-    private int a = 0;
-    private ObjectAnimator animator;
-    private ObjectAnimator fanimator;
-    private ObjectAnimator animator1;
-    private ObjectAnimator fanimator1;
-    private ObjectAnimator animator2;
-    private ObjectAnimator fanimator2;
-    private ObjectAnimator animator3;
-    private ObjectAnimator fanimator3;
-
     private Context context;
     private List<H_Bean_tuijian.DataBean> data;
     private View inflate;
-    private boolean fals = true;
 
     public H_Adapter_tuijian(Context context, List<H_Bean_tuijian.DataBean> data) {
         this.context = context;
@@ -66,9 +54,6 @@ public class H_Adapter_tuijian extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         final MyViewHolder myViewHolder = (MyViewHolder) holder;
-
-
-
         //name
         if (data.get(position).getUser().getNickname()!=null){
             myViewHolder.name.setText(data.get(position).getUser().getNickname());
@@ -87,7 +72,6 @@ public class H_Adapter_tuijian extends RecyclerView.Adapter {
                 .build();
         myViewHolder.img.setController(build);
 
-
 //        Glide.with(context)
 //                .load(data.get(position).getUser().getIcon())
 //                .into(myViewHolder.img);
@@ -95,102 +79,15 @@ public class H_Adapter_tuijian extends RecyclerView.Adapter {
         myViewHolder.vv.setUp(data.get(position).getVideoUrl()+"",data.get(position).getWid()+"");
 
         //属性动画
-//        myViewHolder.img1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (fals){
-//                    fals = false;
-//                    ObjectAnimator animato = ObjectAnimator.ofFloat( myViewHolder.img1, "rotation", 0f, 180f);
-//                    animato.setDuration(1000);
-//                    animato.start();
-////                ObjectAnimator ani = ObjectAnimator.ofFloat( myViewHolder.img1, "alpha", 1f, 0f);
-////                ani.setDuration(1000);//时间1s
-////                ani.start();
-////                ObjectAnimator ani21 = ObjectAnimator.ofFloat( myViewHolder.img1, "alpha", 0f, 1f);
-////                ani21.setDuration(1000);//时间1s
-////                ani21.start();
-//                    ObjectAnimator animator = ObjectAnimator.ofFloat( myViewHolder.img2, "alpha", 1f, 0f, 1f);
-//                    animator.setDuration(1000);//时间1s
-//                    animator.start();
-//                    ObjectAnimator animator2 = ObjectAnimator.ofFloat( myViewHolder.img2, "rotation", 0f, 360f, 0f);
-//                    animator2.setDuration(1000);
-//                    animator2.start();
-//                    ObjectAnimator animator3 = ObjectAnimator.ofFloat( myViewHolder.img2, "translationX", 0f, -90f);
-//                    animator3.setDuration(1000);
-//                    animator3.start();
-//                    ObjectAnimator ani1 = ObjectAnimator.ofFloat( myViewHolder.img3, "alpha", 1f, 0f, 1f);
-//                    ani1.setDuration(1000);//时间1s
-//                    ani1.start();
-//                    ObjectAnimator ani2 = ObjectAnimator.ofFloat(myViewHolder.img3, "rotation", 0f, 360f, 0f);
-//                    ani2.setDuration(1000);
-//                    ani2.start();
-//                    ObjectAnimator ani3 = ObjectAnimator.ofFloat(myViewHolder.img3, "translationX", 0f, -180f);
-//                    ani3.setDuration(1000);
-//                    ani3.start();
-//                    ObjectAnimator anim1 = ObjectAnimator.ofFloat(myViewHolder.img4, "alpha", 1f, 0f, 1f);
-//                    anim1.setDuration(1000);//时间1s
-//                    anim1.start();
-//                    ObjectAnimator anim2 = ObjectAnimator.ofFloat(myViewHolder.img4, "rotation", 0f, 360f, 0f);
-//                    anim2.setDuration(1000);
-//                    anim2.start();
-//                    ObjectAnimator anim3 = ObjectAnimator.ofFloat(myViewHolder.img4, "translationX", 0f, -270f);
-//                    anim3.setDuration(1000);
-//                    anim3.start();
-//                }else {
-//                    fals =true;
-//                    ObjectAnimator anima = ObjectAnimator.ofFloat(myViewHolder.img1, "rotation", 180f, 0f);
-//                    anima.setDuration(1000);
-//                    anima.start();
-////                ObjectAnimator ani = ObjectAnimator.ofFloat(myViewHolder.img1, "alpha", 0f, 1f);
-////                ani.setDuration(1000);//时间1s
-////                ani.start();
-////                ObjectAnimator ani21 = ObjectAnimator.ofFloat(myViewHolder.img1, "alpha", 1f, 0f);
-////                ani21.setDuration(1000);//时间1s
-////                ani21.start();
-//                    ObjectAnimator animator = ObjectAnimator.ofFloat(myViewHolder.img2, "alpha", 1f, 0f);
-//                    animator.setDuration(1000);//时间1s
-//                    animator.start();
-//                    ObjectAnimator animator2 = ObjectAnimator.ofFloat(myViewHolder.img2, "rotation", 0f, 360f, 0f);
-//                    animator2.setDuration(1000);
-//                    animator2.start();
-//                    ObjectAnimator animator3 = ObjectAnimator.ofFloat(myViewHolder.img2, "translationX", -90f, 0f);
-//                    animator3.setDuration(1000);
-//                    animator3.start();
-//                    ObjectAnimator ani1 = ObjectAnimator.ofFloat(myViewHolder.img3, "alpha", 1f, 0f);
-//                    ani1.setDuration(1000);//时间1s
-//                    ani1.start();
-//                    ObjectAnimator ani2 = ObjectAnimator.ofFloat(myViewHolder.img3, "rotation", 0f, 360f, 0f);
-//                    ani2.setDuration(1000);
-//                    ani2.start();
-//                    ObjectAnimator ani3 = ObjectAnimator.ofFloat(myViewHolder.img3, "translationX", -180f, 0f);
-//                    ani3.setDuration(1000);
-//                    ani3.start();
-//                    ObjectAnimator anim1 = ObjectAnimator.ofFloat(myViewHolder.img4, "alpha", 1f, 0f);
-//                    anim1.setDuration(1000);//时间1s
-//                    anim1.start();
-//                    ObjectAnimator anim2 = ObjectAnimator.ofFloat(myViewHolder.img4, "rotation", 0f, 360f, 0f);
-//                    anim2.setDuration(1000);
-//                    anim2.start();
-//                    ObjectAnimator anim3 = ObjectAnimator.ofFloat(myViewHolder.img4, "translationX", -270f, 0f);
-//                    anim3.setDuration(1000);
-//                    anim3.start();
-//                }
-//            }
-//        });
-
-
         myViewHolder.jia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 myViewHolder.jia.setVisibility(View.GONE);
                 myViewHolder.jian.setVisibility(View.VISIBLE);
-
-
                 //加号
                 ObjectAnimator ra = ObjectAnimator.ofFloat( myViewHolder.jia,"rotation", 0f, 360f);
                 ra.setDuration(1000);
                 ra.start();
-
                 //举报
                 ObjectAnimator translationX = new ObjectAnimator().ofFloat( myViewHolder.jubao,"translationX",0,-70f);
                 ObjectAnimator translationY = new ObjectAnimator().ofFloat(myViewHolder.jubao,"translationY",0,0);
@@ -201,11 +98,9 @@ public class H_Adapter_tuijian extends RecyclerView.Adapter {
                 animatorSet.playTogether(translationX,translationY); //设置动画
                 animatorSet.setDuration(1000);  //设置动画时间
                 animatorSet.start(); //启动
-
                 ObjectAnimator ra_jubao = ObjectAnimator.ofFloat(myViewHolder.jubao,"rotation", 0f, 360f);
                 ra_jubao.setDuration(1000);
                 ra_jubao.start();
-
                 //复制链接
                 ObjectAnimator translationX2 = new ObjectAnimator().ofFloat(myViewHolder.fuzhi,"translationX",0,-140f);
                 ObjectAnimator translationY2 = new ObjectAnimator().ofFloat(myViewHolder.fuzhi,"translationY",0,0);
@@ -216,11 +111,9 @@ public class H_Adapter_tuijian extends RecyclerView.Adapter {
                 animatorSet2.playTogether(translationX2,translationY2); //设置动画
                 animatorSet2.setDuration(1000);  //设置动画时间
                 animatorSet2.start(); //启动
-
                 ObjectAnimator ra_fuzhi = ObjectAnimator.ofFloat(myViewHolder.fuzhi,"rotation", 0f, 360f);
                 ra_fuzhi.setDuration(1000);
                 ra_fuzhi.start();
-
                 //屏蔽
                 ObjectAnimator translationX3 = new ObjectAnimator().ofFloat(myViewHolder.pingbi,"translationX",0,-210f);
                 ObjectAnimator translationY3 = new ObjectAnimator().ofFloat(myViewHolder.pingbi,"translationY",0,0);
@@ -231,20 +124,17 @@ public class H_Adapter_tuijian extends RecyclerView.Adapter {
                 animatorSet3.playTogether(translationX3,translationY3); //设置动画
                 animatorSet3.setDuration(1000);  //设置动画时间
                 animatorSet3.start(); //启动
-
                 ObjectAnimator ra_ping = ObjectAnimator.ofFloat(myViewHolder.pingbi,"rotation", 0f, 360f);
                 ra_ping.setDuration(1000);
                 ra_ping.start();
             }
         });
-
-
+        //关闭
         myViewHolder.jian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 myViewHolder.jia.setVisibility(View.VISIBLE);
                 myViewHolder.jian.setVisibility(View.GONE);
-
                 //屏蔽
                 ObjectAnimator translationX3 = new ObjectAnimator().ofFloat(myViewHolder.pingbi,"translationX",-70f,0f);
                 ObjectAnimator translationY3 = new ObjectAnimator().ofFloat(myViewHolder.pingbi,"translationY",0,0);
@@ -255,12 +145,9 @@ public class H_Adapter_tuijian extends RecyclerView.Adapter {
                 animatorSet3.playTogether(translationX3,translationY3); //设置动画
                 animatorSet3.setDuration(1000);  //设置动画时间
                 animatorSet3.start(); //启动
-
                 ObjectAnimator ra_ping = ObjectAnimator.ofFloat(myViewHolder.pingbi,"rotation", 0f, 360f);
                 ra_ping.setDuration(1000);
                 ra_ping.start();
-
-
                 //复制链接
                 ObjectAnimator translationX2 = new ObjectAnimator().ofFloat(myViewHolder.fuzhi,"translationX",-140,0f);
                 ObjectAnimator translationY2 = new ObjectAnimator().ofFloat(myViewHolder.fuzhi,"translationY",0,0);
@@ -271,11 +158,9 @@ public class H_Adapter_tuijian extends RecyclerView.Adapter {
                 animatorSet2.playTogether(translationX2,translationY2); //设置动画
                 animatorSet2.setDuration(1000);  //设置动画时间
                 animatorSet2.start(); //启动
-
                 ObjectAnimator ra_fuzhi = ObjectAnimator.ofFloat(myViewHolder.fuzhi,"rotation", 0f, 360f);
                 ra_fuzhi.setDuration(1000);
                 ra_fuzhi.start();
-
                 //举报
                 ObjectAnimator translationX = new ObjectAnimator().ofFloat(myViewHolder.jubao,"translationX",-210,0f);
                 ObjectAnimator translationY = new ObjectAnimator().ofFloat(myViewHolder.jubao,"translationY",0,0);
@@ -286,45 +171,78 @@ public class H_Adapter_tuijian extends RecyclerView.Adapter {
                 animatorSet.playTogether(translationX,translationY); //设置动画
                 animatorSet.setDuration(1000);  //设置动画时间
                 animatorSet.start(); //启动
-
                 ObjectAnimator ra_jubao = ObjectAnimator.ofFloat(myViewHolder.jubao,"rotation", 0f, 360f);
                 ra_jubao.setDuration(1000);
                 ra_jubao.start();
-
-
             }
         });
 
-    }
+        //点击心加一
+        myViewHolder.xin2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    myViewHolder.xin2_1.setVisibility(View.VISIBLE);
+                    myViewHolder.xin2.setVisibility(View.INVISIBLE);
+                    String num = myViewHolder.xin1.getText().toString();
+                    int i = Integer.parseInt(num);
+                    i++;
+                    myViewHolder.xin1.setText(i+"");
+            }
+        });
+        //点击❤减一
+        myViewHolder.xin2_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                    myViewHolder.xin2.setVisibility(View.VISIBLE);
+                    myViewHolder.xin2_1.setVisibility(View.INVISIBLE);
+                    String num = myViewHolder.xin1.getText().toString();
+                    int i = Integer.parseInt(num);
+                    i--;
+                    myViewHolder.xin1.setText(i+"");
+            }
+        });
+
+        //点击星星加一
+        myViewHolder.xing2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myViewHolder.xing2_1.setVisibility(View.VISIBLE);
+                myViewHolder.xing2.setVisibility(View.INVISIBLE);
+                String num = myViewHolder.xing1.getText().toString();
+                int i = Integer.parseInt(num);
+                i++;
+                myViewHolder.xing1.setText(i+"");
+            }
+        });
+        myViewHolder.xing2_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                myViewHolder.xing2.setVisibility(View.VISIBLE);
+                myViewHolder.xing2_1.setVisibility(View.INVISIBLE);
+                String num = myViewHolder.xing1.getText().toString();
+                int i = Integer.parseInt(num);
+                i--;
+                myViewHolder.xing1.setText(i+"");
+            }
+        });
+    }
     @Override
     public int getItemCount() {
         Log.i("zz","--"+data.size());
         return data.size();
     }
-
     class MyViewHolder extends RecyclerView.ViewHolder{
 
-        private final SimpleDraweeView img;
-        private final TextView name;
-        private final TextView sj;
-        private final TextView ping;
-        private final TextView p1;
-        private final TextView p2;
+        private final TextView name,sj,ping,p1,p2,xin1,xing1,zhuan1,ping1;
         private final JCVideoPlayer vv;
-//        private final ImageView img1;
-//        private final ImageView img2;
-//        private final ImageView img3;
-//        private final ImageView img4;
-        private final SimpleDraweeView jia,jian,jubao,fuzhi,pingbi;
-        private final ImageView sp;
-
+        private final SimpleDraweeView jia,jian,jubao,fuzhi,pingbi,img;
+        private final ImageView sp,xin2,xing2,zhuan2,ping2,xin2_1,xing2_1;
         public MyViewHolder(View itemView) {
             super(itemView);
-
             img = itemView.findViewById(R.id.h_tuijian_img);
             sp = itemView.findViewById(R.id.h_tuijian_sp);
-
             //昵称
             name = itemView.findViewById(R.id.h_tuijian_tv_name);
             //时间
@@ -336,17 +254,24 @@ public class H_Adapter_tuijian extends RecyclerView.Adapter {
             //评论
             p1 = itemView.findViewById(R.id.h_tuijian_tv_p1);
             p2 = itemView.findViewById(R.id.h_tuijian_tv_p2);
-            //属性动画
-//            img1 = itemView.findViewById(R.id.h_tuijian_img1);
-//            img2 = itemView.findViewById(R.id.h_tuijian_img2);
-//            img3 = itemView.findViewById(R.id.h_tuijian_img3);
-//            img4 = itemView.findViewById(R.id.h_tuijian_img4);
             jia = itemView.findViewById(R.id.h_tuijian_jia);
             jian =  itemView.findViewById(R.id.h_tuijian_jian);
             jubao = itemView.findViewById(R.id.h_tuijian_jubao);
             fuzhi = itemView.findViewById(R.id.h_tuijian_fuzhi);
             pingbi = itemView.findViewById(R.id.h_tuijian_pingbi);
+
+            xin1 = itemView.findViewById(R.id.h_tuijian_xin1);
+            xing1 = itemView.findViewById(R.id.h_tuijian_xing1);
+            zhuan1 = itemView.findViewById(R.id.h_tuijian_zhuan1);
+            ping1 = itemView.findViewById(R.id.h_tuijian_ping1);
+
+            xin2 = itemView.findViewById(R.id.imageView15);
+            xin2_1 = itemView.findViewById(R.id.imageView15_1);
+            xing2 = itemView.findViewById(R.id.imageView16);
+            xing2_1 = itemView.findViewById(R.id.imageView16_1);
+            zhuan2 = itemView.findViewById(R.id.imageView17);
+            ping2 = itemView.findViewById(R.id.imageView18);
+
         }
     }
-
 }
