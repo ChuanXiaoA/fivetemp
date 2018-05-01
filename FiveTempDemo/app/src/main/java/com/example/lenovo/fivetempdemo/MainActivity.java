@@ -28,6 +28,7 @@ import com.example.lenovo.fivetempdemo.DrawerLayout.Activity.Login_Activity;
 import com.example.lenovo.fivetempdemo.Fragment.Fragment1;
 import com.example.lenovo.fivetempdemo.Fragment.Fragment2;
 import com.example.lenovo.fivetempdemo.Fragment.Fragment3;
+import com.example.lenovo.fivetempdemo.Utils.AutoUtils;
 import com.example.lenovo.fivetempdemo.Utils.SPUtil;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.controller.AbstractDraweeController;
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         getData();
-
+        AutoUtils.auto(this);
 
     }
     @OnClick({R.id.btnbar, R.id.imageView, R.id.textView, R.id.imageView2, R.id.touxiang, R.id.naicha, R.id.rlv, R.id.yueliang, R.id.yejianmoshi, R.id.imageView3, R.id.imageView4, R.id.left, R.id.drawer_layout})

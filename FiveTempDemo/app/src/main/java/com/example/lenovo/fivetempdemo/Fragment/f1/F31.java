@@ -19,6 +19,7 @@ import com.example.lenovo.fivetempdemo.ReMenShiPin.ItemFenge.MyDecoration;
 import com.example.lenovo.fivetempdemo.ReMenShiPin.Presenter.MyHotPresenter;
 import com.example.lenovo.fivetempdemo.ReMenShiPin.View.Activity.HotVideoActivity;
 import com.example.lenovo.fivetempdemo.ReMenShiPin.View.MyViewHot;
+import com.example.lenovo.fivetempdemo.Utils.AutoUtils;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
@@ -39,7 +40,7 @@ public class F31 extends Fragment implements MyViewHot{
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.f31,container,false);
-
+        AutoUtils.auto(view);
         hotvideo_recy1 = view.findViewById(R.id.hotvideo_recy);
 
         //上拉刷新  下拉加载ID

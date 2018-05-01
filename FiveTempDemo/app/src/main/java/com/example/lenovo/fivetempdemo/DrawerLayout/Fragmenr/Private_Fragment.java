@@ -11,6 +11,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.example.lenovo.fivetempdemo.R;
+import com.example.lenovo.fivetempdemo.Utils.AutoUtils;
 
 /**
  * Created by lenovo on 2018/4/27.
@@ -34,6 +35,7 @@ public class Private_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.private_fragment, container, false);
         initView(view);
+        AutoUtils.auto(view);
         Glide.with(this).load(img).into(mPrivateimg);
         Glide.with(this).load(gou).into(mImageView8);
         Glide.with(this).load(qqq).into(mImageView6);
