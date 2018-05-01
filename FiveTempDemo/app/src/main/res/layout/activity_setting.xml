@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.lenovo.fivetempdemo.DrawerLayout.Activity.Setting_Activity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="45dp"
@@ -13,32 +14,32 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_weight="1"
-            android:onClick="activity_bt_bank"
             android:id="@+id/activity_sgezhi_image_bank"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginBottom="13dp"
             android:layout_marginTop="12dp"
+            android:layout_weight="1"
+            android:onClick="activity_bt_bank"
             android:src="@mipmap/raw_1500019926" />
 
         <TextView
-            android:layout_weight="1"
-            android:onClick="activity_bt_bank"
             android:layout_width="33dp"
             android:layout_height="45dp"
+            android:layout_weight="1"
             android:gravity="center"
+            android:onClick="activity_bt_bank"
             android:text="@string/activity_fanhui"
             android:textColor="#fff"
             android:textSize="16dp" />
 
         <TextView
-            android:layout_weight="9"
-            android:textColor="#fff"
             android:layout_width="33dp"
             android:layout_height="45dp"
-            android:text="@string/activity_shezhi"
+            android:layout_weight="9"
             android:gravity="center"
+            android:text="@string/activity_shezhi"
+            android:textColor="#fff"
             android:textSize="16dp" />
 
     </LinearLayout>
@@ -46,7 +47,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="10dp"
-        android:background="#ebebeb"></LinearLayout>
+        android:background="#ebebeb">
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -61,17 +64,17 @@
             <TextView
                 android:layout_width="120dp"
                 android:layout_height="41dp"
-                android:textColor="#f000"
                 android:gravity="center"
-                android:text="@string/activity_jianchagengxin" />
+                android:text="@string/activity_jianchagengxin"
+                android:textColor="#f000" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#f000"
                 android:layout_marginLeft="177dp"
                 android:gravity="center"
-                android:text="@string/activity_lingyiyi" />
+                android:text="@string/activity_lingyiyi"
+                android:textColor="#f000" />
 
             <ImageView
                 android:layout_width="20dp"
@@ -87,18 +90,20 @@
             android:layout_height="3dp"
             android:layout_marginLeft="65dp"
             android:background="#ebebeb"
-            android:orientation="horizontal"></LinearLayout>
+            android:orientation="horizontal">
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
-                android:textColor="#f000"
                 android:layout_width="120dp"
                 android:layout_height="41dp"
                 android:gravity="center"
-                android:text="@string/activity_yijianfankui" />
+                android:text="@string/activity_yijianfankui"
+                android:textColor="#f000" />
 
             <ImageView
                 android:layout_width="20dp"
@@ -114,7 +119,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="10dp"
-        android:background="#ebebeb"></LinearLayout>
+        android:background="#ebebeb">
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -127,11 +134,11 @@
             android:orientation="horizontal">
 
             <TextView
-                android:textColor="#f000"
                 android:layout_width="120dp"
                 android:layout_height="41dp"
                 android:gravity="center"
-                android:text="@string/activity_guanyuyikezhong" />
+                android:text="@string/activity_guanyuyikezhong"
+                android:textColor="#f000" />
 
             <ImageView
                 android:layout_width="20dp"
@@ -147,26 +154,28 @@
             android:layout_height="3dp"
             android:layout_marginLeft="65dp"
             android:background="#ebebeb"
-            android:orientation="horizontal"></LinearLayout>
+            android:orientation="horizontal">
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
-                android:textColor="#f000"
                 android:layout_width="120dp"
                 android:layout_height="41dp"
                 android:gravity="center"
-                android:text="@string/activity_qingchuhuancun" />
+                android:text="@string/activity_qingchuhuancun"
+                android:textColor="#f000" />
 
             <TextView
-                android:textColor="#f000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="177dp"
                 android:gravity="center"
-                android:text="@string/activity_yierba" />
+                android:text="@string/activity_yierba"
+                android:textColor="#f000" />
 
             <ImageView
                 android:layout_width="20dp"
@@ -182,7 +191,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="19dp"
-        android:background="#ebebeb"></LinearLayout>
+        android:background="#ebebeb">
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/activity_shezhi_button_finish"

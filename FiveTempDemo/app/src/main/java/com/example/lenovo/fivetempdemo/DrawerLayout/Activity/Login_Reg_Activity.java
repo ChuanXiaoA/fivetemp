@@ -114,9 +114,11 @@ public class Login_Reg_Activity extends AppCompatActivity implements Login_View 
             Login_Info.DataBean data = loginInfo.getData();
             int uid = data.getUid();
             String token = data.getToken();
+            String username = data.getUsername();
             SPUtil spu = new SPUtil(Login_Reg_Activity.this, "SPU");
             spu.putString("uid",uid+"");
             spu.putString("token",token);
+            spu.putString("name",username);
             Toast.makeText(this, loginInfo.getMsg(), Toast.LENGTH_SHORT).show();
             startActivity(new Intent(Login_Reg_Activity.this, MainActivity.class));
         }else {

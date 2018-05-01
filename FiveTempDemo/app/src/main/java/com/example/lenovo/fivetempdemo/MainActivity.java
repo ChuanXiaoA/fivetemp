@@ -28,6 +28,7 @@ import com.example.lenovo.fivetempdemo.DrawerLayout.Activity.Login_Activity;
 import com.example.lenovo.fivetempdemo.Fragment.Fragment1;
 import com.example.lenovo.fivetempdemo.Fragment.Fragment2;
 import com.example.lenovo.fivetempdemo.Fragment.Fragment3;
+import com.example.lenovo.fivetempdemo.Utils.SPUtil;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.controller.AbstractDraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -125,7 +126,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getData(){
+        SPUtil spUtil=new SPUtil(this,"SPU");
+        String name = spUtil.getString("name", null);
+        String qqname = spUtil.getString("qqname", null);
 
+        mNaicha.setText(name);
+        mNaicha.setText(qqname);
         mDrawerLayout1 = new DrawerLayout(this);
         mBtnbar.init(getSupportFragmentManager())
                 .setFontSize(0)

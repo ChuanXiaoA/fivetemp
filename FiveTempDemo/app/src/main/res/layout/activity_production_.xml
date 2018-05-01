@@ -19,6 +19,6 @@
         android:layout_weight="9"
         android:id="@+id/zpviewpager"
         />
-    
+
 
 </LinearLayout>

@@ -55,6 +55,7 @@
             android:layout_marginLeft="50dp"
             android:layout_centerVertical="true"
             android:textSize="20dp"
+            android:id="@+id/sousuo"
             android:hint="输入ID或者钟友名" />
 
         <TextView
