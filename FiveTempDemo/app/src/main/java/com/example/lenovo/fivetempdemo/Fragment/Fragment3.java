@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import com.example.lenovo.fivetempdemo.Fragment.f1.F31;
 import com.example.lenovo.fivetempdemo.Fragment.f1.F32;
 import com.example.lenovo.fivetempdemo.R;
+import com.example.lenovo.fivetempdemo.Utils.AutoUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,7 @@ public class Fragment3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment3, container, false);
         initView(view);
+        AutoUtils.auto(view);
         f31 = new F31();
         f32 = new F32();
         list = new ArrayList<>();

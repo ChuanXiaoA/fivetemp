@@ -4,23 +4,28 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lenovo.fivetempdemo.Base.BaseActivity;
 import com.example.lenovo.fivetempdemo.DrawerLayout.Adapter.Seek_Random_Adapter;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Adapter.SouSuo_Adapter;
 import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.Seek_Random_Info;
+import com.example.lenovo.fivetempdemo.DrawerLayout.Bean.SouSuo_Info;
 import com.example.lenovo.fivetempdemo.DrawerLayout.presenter.DianAttention_Presenter;
 import com.example.lenovo.fivetempdemo.DrawerLayout.presenter.Seek_Random_Presenter;
+import com.example.lenovo.fivetempdemo.DrawerLayout.presenter.SouSuo_Presenter;
 import com.example.lenovo.fivetempdemo.DrawerLayout.view.DianAttention_View;
 import com.example.lenovo.fivetempdemo.DrawerLayout.view.Seek_Random_View;
+import com.example.lenovo.fivetempdemo.DrawerLayout.view.SouSuo_View;
 import com.example.lenovo.fivetempdemo.R;
 import com.example.lenovo.fivetempdemo.Utils.SPUtil;
 
 import java.util.List;
 
-public class Seek_Random_Activity extends BaseActivity<Seek_Random_Presenter> implements Seek_Random_View,DianAttention_View {
+public class Seek_Random_Activity extends BaseActivity<Seek_Random_Presenter> implements Seek_Random_View,DianAttention_View ,SouSuo_View{
 
     /**
      * 返回
@@ -45,6 +50,8 @@ public class Seek_Random_Activity extends BaseActivity<Seek_Random_Presenter> im
     private DianAttention_Presenter dianAttention_presenter;
     private String uid;
     private String token;
+    private EditText editText;
+    private List<SouSuo_Info.DataBean> data1;
 
     @Override
     public int getLayout() {
@@ -67,6 +74,7 @@ public class Seek_Random_Activity extends BaseActivity<Seek_Random_Presenter> im
         mRlv =  findViewById(R.id.rlv);
         mHuanyipi =  findViewById(R.id.huanyipi);
         mRlv2 =  findViewById(R.id.rlv2);
+        editText = findViewById(R.id.sousuo);
     }
 
     @Override
@@ -84,6 +92,25 @@ public class Seek_Random_Activity extends BaseActivity<Seek_Random_Presenter> im
         SPUtil spUtil=new SPUtil(this,"SPU");
         uid = spUtil.getString("uid", null);
         token = spUtil.getString("token", null);
+        final SouSuo_Presenter souSuo_presenter=new SouSuo_Presenter(this);
+
+        mSosuoimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(!editText.getText().toString().equals("")){
+                    souSuo_presenter.getSouSuoPresenter("android",101+"",editText.getText().toString());
+                }
+            }
+        });
+        mQingchulishijilu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                data1.clear();
+                mRlv.setAdapter(new SouSuo_Adapter(Seek_Random_Activity.this, data1));
+            }
+        });
+        
     }
 
     @Override
@@ -94,6 +121,7 @@ public class Seek_Random_Activity extends BaseActivity<Seek_Random_Presenter> im
         seek_random_adapter.setOnButtonListener(new Seek_Random_Adapter.OnButtonListener() {
             @Override
             public void OnSuccess(int layoutPosition) {
+
             dianAttention_presenter.getDianAttentionPresenter(token,uid,"android",101+"",data.get(layoutPosition).getUid()+"");
             }
         });
@@ -108,5 +136,12 @@ public class Seek_Random_Activity extends BaseActivity<Seek_Random_Presenter> im
     @Override
     public void OnErrorr(String msg) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void OnSuccess(SouSuo_Info souSuo_info) {
+        data1 = souSuo_info.getData();
+        mRlv.setLayoutManager(new LinearLayoutManager(this));
+        mRlv.setAdapter(new SouSuo_Adapter(Seek_Random_Activity.this, data1));
     }
 }

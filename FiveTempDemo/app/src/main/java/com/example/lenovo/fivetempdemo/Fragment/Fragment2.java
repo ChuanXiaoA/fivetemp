@@ -15,6 +15,7 @@ import com.example.lenovo.fivetempdemo.Cross_Talk.Cross_Talk_I_View.C_I_duanzi;
 import com.example.lenovo.fivetempdemo.Cross_Talk.Cross_Talk_Presenter.C_Presenter_duanzi;
 import com.example.lenovo.fivetempdemo.Cross_Talk.Cross_Talk_Adapter.C_Adapter_duanzi;
 import com.example.lenovo.fivetempdemo.R;
+import com.example.lenovo.fivetempdemo.Utils.AutoUtils;
 
 import java.util.List;
 
@@ -30,7 +31,7 @@ public class Fragment2 extends Fragment implements C_I_duanzi{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment2, container, false);
         initView(view);
-
+        AutoUtils.auto(view);
         C_Presenter_duanzi c_presenter_duanzi = new C_Presenter_duanzi(this);
         c_presenter_duanzi.getduanzi();
 

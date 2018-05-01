@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import com.example.lenovo.fivetempdemo.Fragment.f1.F11;
 import com.example.lenovo.fivetempdemo.Fragment.f1.F12;
 import com.example.lenovo.fivetempdemo.R;
+import com.example.lenovo.fivetempdemo.Utils.AutoUtils;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -38,6 +39,7 @@ public class Fragment1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment1, container, false);
         initView(view);
+        AutoUtils.auto(view);
         f11 = new F11();
         f12 = new F12();
         list = new ArrayList<>();

@@ -19,6 +19,7 @@ import com.example.lenovo.fivetempdemo.FuJinVideo.Nearby_View.MyNearbyView;
 import com.example.lenovo.fivetempdemo.R;
 import com.example.lenovo.fivetempdemo.ReMenShiPin.ItemFenge.MyDecoration;
 import com.example.lenovo.fivetempdemo.ReMenShiPin.View.Activity.HotVideoActivity;
+import com.example.lenovo.fivetempdemo.Utils.AutoUtils;
 
 import java.util.List;
 
@@ -35,6 +36,7 @@ public class F32 extends Fragment implements MyNearbyView {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.f32, container, false);
+        AutoUtils.auto(view);
         deayby_recy = view.findViewById(R.id.Dearby_Recy);
         //附近视频展示列表布局  瀑布流
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);

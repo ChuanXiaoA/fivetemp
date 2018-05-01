@@ -22,6 +22,7 @@ import com.example.lenovo.fivetempdemo.HomePage.Home_Bean.H_Bean_tuijian;
 import com.example.lenovo.fivetempdemo.HomePage.Home_Presenter.H_Presenter_lunbo;
 import com.example.lenovo.fivetempdemo.HomePage.Home_Presenter.H_Presenter_tuijian;
 import com.example.lenovo.fivetempdemo.R;
+import com.example.lenovo.fivetempdemo.Utils.AutoUtils;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
 
@@ -42,6 +43,7 @@ public class F11 extends Fragment implements H_I_lunbo , H_I_tuijian{
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.f11, container, false);
+        AutoUtils.auto(view);
         //调用初始化
         initView(view);
         //轮播实现
