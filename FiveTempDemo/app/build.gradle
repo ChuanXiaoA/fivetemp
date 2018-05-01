@@ -54,6 +54,7 @@ dependencies {
     compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-2'
     compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-2'
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
     implementation files('libs/AMap_Location_V4.0.0_20180423.jar')
@@ -66,6 +67,10 @@ dependencies {
 =======
     implementation files('libs/AMap_Location_V4.0.0_20180423.jar')
     implementation files('libs/Android_Map3D_SDK_V6.1.0_20180330.jar')
+=======
+    implementation files('libs/AMap_Location_V4.0.0_20180423.jar')
+    implementation files('libs/Android_Map3D_SDK_V6.1.0_20180330.jar')
+>>>>>>> 93503db9865bd0debc0482cf7a15311eea2f13b0
     implementation files('libs/AMap_Location_V4.0.0_20180423.jar')
     implementation files('libs/Android_Map3D_SDK_V6.1.0_20180330.jar')
     implementation files('libs/AMap_Location_V4.0.0_20180423.jar')
