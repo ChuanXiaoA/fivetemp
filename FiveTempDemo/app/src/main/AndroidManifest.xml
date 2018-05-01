@@ -58,14 +58,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".ReMenShiPin.View.Activity.HotVideoActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
-
-
 
         <service android:name="com.amap.api.location.APSService" />
 
@@ -73,31 +69,20 @@
             android:name="com.amap.api.v2.apikey"
             android:value="f78cf682c668f9a300a5604eaac54ce3" />
 
-
-
         <activity android:name=".DrawerLayout.Activity.Login_Activity" />
         <activity android:name=".DrawerLayout.Activity.Login_Reg_Activity" />
         <activity android:name=".DrawerLayout.Activity.Reg_Activity" />
         <activity android:name=".DrawerLayout.Activity.Forget_Pwd_Activity" />
         <activity android:name=".Creation.CreationActivity" />
-
-
         <activity android:name=".DrawerLayout.Activity.MyAttention_Activity" />
         <activity android:name=".DrawerLayout.Activity.Collect_Activity" />
         <activity android:name=".DrawerLayout.Activity.Seek_Random_Activity" />
-        <activity android:name=".User.UserView.Activity.UserActivity"></activity>
-
-
-
-
-
-
+        <activity android:name=".User.UserView.Activity.UserActivity" />
         <activity android:name=".DrawerLayout.Activity.News_Activity" />
         <activity android:name=".DrawerLayout.Activity.Setting_Activity" />
-        <activity android:name=".DrawerLayout.Activity.Production_Activity"></activity>
-
-
-
+        <activity android:name=".DrawerLayout.Activity.Production_Activity" />
+        <activity android:name=".VideoActivity" />
+        <activity android:name=".CameraActivity"></activity>
     </application>
 
 </manifest>

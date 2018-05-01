@@ -1,8 +1,12 @@
 package com.example.lenovo.fivetempdemo.Creation;
+import android.content.Intent;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.lenovo.fivetempdemo.Base.BaseActivity;
 import com.example.lenovo.fivetempdemo.R;
+import com.example.lenovo.fivetempdemo.VideoActivity;
+
 public class CreationActivity extends BaseActivity {
 
     /**
@@ -19,6 +23,8 @@ public class CreationActivity extends BaseActivity {
 
     @Override
     public Object getPresenter() {
+
+
         return null;
     }
 
@@ -32,6 +38,13 @@ public class CreationActivity extends BaseActivity {
 
     @Override
     public void getData() {
+        mLuzishipin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                Intent intent = new Intent(CreationActivity.this, VideoActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
